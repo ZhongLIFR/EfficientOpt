@@ -1,0 +1,15 @@
+{
+  "problem_id": "T33_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 23.0,
+  "solver_runtime_seconds": 0.0018842000281438231,
+  "code_run_time_seconds": 0.0018840000266209245,
+  "work_units": 12898,
+  "num_variables": 301,
+  "num_constraints": 32,
+  "num_nonzeros": 256,
+  "iterations": 301,
+  "method": "canonical_standard_leq_transformation",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T41_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -129544.74829773439,
+  "solver_runtime_seconds": 0.00010112500000000746,
+  "code_run_time_seconds": 0.00010112500000000746,
+  "work_units": 180,
+  "num_variables": 180,
+  "num_constraints": 180,
+  "num_nonzeros": 32400,
+  "iterations": 1,
+  "method": "monotone_vi_aggregate_closed_form",
+  "validation_source": "validation.json"
+}

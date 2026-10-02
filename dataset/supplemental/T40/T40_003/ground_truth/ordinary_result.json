@@ -1,0 +1,15 @@
+{
+  "problem_id": "T40_003",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 3866.9508785086273,
+  "solver_runtime_seconds": 0.073384166,
+  "code_run_time_seconds": 0.073384166,
+  "work_units": 1080000,
+  "num_variables": 9000,
+  "num_constraints": 9001,
+  "num_nonzeros": 18000,
+  "iterations": 120,
+  "method": "generic_projection_dual_bisection",
+  "validation_source": "validation.json"
+}

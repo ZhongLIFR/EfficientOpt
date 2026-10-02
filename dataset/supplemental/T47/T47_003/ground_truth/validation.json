@@ -1,0 +1,93 @@
+{
+  "problem_id": "T47_003",
+  "target_technique": "T47",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 135221.7657026237,
+        "solution_norm_sq": 453459.9788820518,
+        "solution_checksum": 7.608947303210266,
+        "wall_seconds": 0.36527275,
+        "runtime": 0.36527275,
+        "work": 2898000,
+        "iterations": 1,
+        "variables": 579600,
+        "constraints": 0,
+        "nonzeros": 579600,
+        "method": "dense_full_matrix_ridge_shrinkage",
+        "materialized_rows": 840
+      },
+      "technique": {
+        "objective": 135221.7657026287,
+        "solution_norm_sq": 453459.9788820547,
+        "solution_checksum": 0.7823671133230757,
+        "wall_seconds": 0.002592959000000006,
+        "runtime": 0.002592959000000006,
+        "work": 38275,
+        "iterations": 1,
+        "variables": 7650,
+        "constraints": 0,
+        "nonzeros": 7650,
+        "method": "low_rank_factor_gram_shrinkage",
+        "structure_preserved": "rank-r target represented through two factor matrices and Gram products"
+      },
+      "reference_objective": 135221.7657026287,
+      "runtime_speedup_percent": 99.29013073107699,
+      "work_reduction_percent": 98.67926155969634,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 135221.7657026237,
+        "solution_norm_sq": 453459.9788820518,
+        "solution_checksum": 7.608947303210266,
+        "wall_seconds": 0.35153145799999996,
+        "runtime": 0.35153145799999996,
+        "work": 2898000,
+        "iterations": 1,
+        "variables": 579600,
+        "constraints": 0,
+        "nonzeros": 579600,
+        "method": "dense_full_matrix_ridge_shrinkage",
+        "materialized_rows": 840
+      },
+      "technique": {
+        "objective": 135221.7657026287,
+        "solution_norm_sq": 453459.9788820547,
+        "solution_checksum": 0.7823671133230757,
+        "wall_seconds": 0.002490083999999948,
+        "runtime": 0.002490083999999948,
+        "work": 38275,
+        "iterations": 1,
+        "variables": 7650,
+        "constraints": 0,
+        "nonzeros": 7650,
+        "method": "low_rank_factor_gram_shrinkage",
+        "structure_preserved": "rank-r target represented through two factor matrices and Gram products"
+      },
+      "reference_objective": 135221.7657026287,
+      "runtime_speedup_percent": 99.2916468943727,
+      "work_reduction_percent": 98.67926155969634,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.29013073107699,
+  "minimum_work_reduction_percent": 98.67926155969634,
+  "pass": true
+}

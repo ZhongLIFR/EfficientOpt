@@ -1,0 +1,15 @@
+{
+  "problem_id": "T27_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 21246170.0,
+  "solver_runtime_seconds": 0.053502083000000006,
+  "code_run_time_seconds": 0.053502083000000006,
+  "work_units": 705894,
+  "num_variables": 6,
+  "num_constraints": 18,
+  "num_nonzeros": 42,
+  "iterations": 6,
+  "method": "cartesian_product_weighted_sum_search",
+  "validation_source": "validation.json"
+}

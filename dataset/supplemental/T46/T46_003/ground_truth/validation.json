@@ -1,0 +1,81 @@
+{
+  "problem_id": "T46_003",
+  "target_technique": "T46",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1531.188624921997,
+        "wall_seconds": 0.0038139579999999992,
+        "runtime": 0.0038139579999999992,
+        "work": 411552,
+        "iterations": 96000,
+        "variables": 10800,
+        "constraints": 1200,
+        "nonzeros": 9600,
+        "method": "generic_norm_line_search"
+      },
+      "technique": {
+        "objective": 1531.1886249219972,
+        "wall_seconds": 0.0009214170000000008,
+        "runtime": 0.0009214170000000008,
+        "work": 9600,
+        "iterations": 1,
+        "variables": 10800,
+        "constraints": 1200,
+        "nonzeros": 9600,
+        "method": "native_soc_projection_formula",
+        "structure_preserved": "second-order cone blocks"
+      },
+      "reference_objective": 1531.1886249219972,
+      "runtime_speedup_percent": 75.8409243101261,
+      "work_reduction_percent": 97.66736645672965,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1531.188624921997,
+        "wall_seconds": 0.0034219579999999958,
+        "runtime": 0.0034219579999999958,
+        "work": 411552,
+        "iterations": 96000,
+        "variables": 10800,
+        "constraints": 1200,
+        "nonzeros": 9600,
+        "method": "generic_norm_line_search"
+      },
+      "technique": {
+        "objective": 1531.1886249219972,
+        "wall_seconds": 0.0006710419999999967,
+        "runtime": 0.0006710419999999967,
+        "work": 9600,
+        "iterations": 1,
+        "variables": 10800,
+        "constraints": 1200,
+        "nonzeros": 9600,
+        "method": "native_soc_projection_formula",
+        "structure_preserved": "second-order cone blocks"
+      },
+      "reference_objective": 1531.1886249219972,
+      "runtime_speedup_percent": 80.39011583426804,
+      "work_reduction_percent": 97.66736645672965,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 75.8409243101261,
+  "minimum_work_reduction_percent": 97.66736645672965,
+  "pass": true
+}

@@ -1,0 +1,871 @@
+{
+  "knowledge_base_id": "OptTips",
+  "source_version": "V8.0_CN_final",
+  "source_file": "OptTips V8.0 CN final",
+  "techniques": [
+    {
+      "tech_id": "T01",
+      "name": "等式/不等式等价转换",
+      "english": "Equality/inequality equivalent transformation",
+      "category": "基础标准化",
+      "core_use": "将区间、守恒、平衡、比例和逻辑表达改写为求解器可识别的等价约束。",
+      "core_idea": "先把自然语言约束标准化，再判断是否需要合并、拆分或消元；变换必须保持可行域和目标等价。",
+      "low_efficiency_symptoms": "变量上 if-else、重复约束、约束方向混乱、同一业务规则多处表达。",
+      "expert_actions": "把区间直接写成变量界；把守恒关系写成等式；把比例关系转为线性约束；记录等价变换说明。",
+      "model_examples": "LP/QP/MIP/凸优化；配料、生产计划、资源平衡。 模型：a <= x <= b 写成 x >= a, x <= b",
+      "benchmark_guidance": "naive: 直接写复杂表达或重复约束；expert: 变量界/标准等式/必要消元；指标为变量数、约束数和 build time。",
+      "semantic_equivalents": [
+        "等式/不等式等价转换",
+        "Equality/inequality equivalent transformation",
+        "把区间直接写成变量界；把守恒关系写成等式；把比例关系转为线性约束；记录等价变换说明。"
+      ]
+    },
+    {
+      "tech_id": "T02",
+      "name": "辅助变量与上图/下图建模",
+      "english": "Auxiliary variables for epigraph/hypograph",
+      "category": "基础标准化",
+      "core_use": "引入 t、z 等辅助变量处理 max/min/abs/norm、嵌套目标和公平性目标。",
+      "core_idea": "最小化凸函数或最大项时用上图；最大化凹函数或最小项时用下图；辅助变量必须被目标或约束绑定。",
+      "low_efficiency_symptoms": "在优化变量上直接调用 Python max/min/abs；嵌套目标不可被求解器识别。",
+      "expert_actions": "引入 t 或 z 并用约束展开；根据目标方向判断不等式方向是否充分。",
+      "model_examples": "鲁棒最坏成本、最大延误、L1/L∞ 回归、公平分配、峰值负荷。 模型：min max_i g_i(x) -> min t, g_i(x) <= t. max min_i u_i(x) -> max z, z <= u_i(x). |e_i| 用 e_i^+ + e_i^-，e_i=e_i^+-e_i^-，e_i^+,e_i^->=0。",
+      "benchmark_guidance": "naive: Python max/min/abs 或黑箱非线性；expert: 辅助变量+线性/锥约束。",
+      "semantic_equivalents": [
+        "辅助变量与上图/下图建模",
+        "Auxiliary variables for epigraph/hypograph",
+        "引入 t 或 z 并用约束展开；根据目标方向判断不等式方向是否充分。"
+      ]
+    },
+    {
+      "tech_id": "T03",
+      "name": "变量上下界紧化与尺度归一化",
+      "english": "Bound tightening; scaling",
+      "category": "基础标准化",
+      "core_use": "从需求、容量、时间窗、物理限制推导变量上下界，并统一单位尺度。",
+      "core_idea": "紧边界是大 M、McCormick、时间窗传播、锥/内点法数值稳定的基础。",
+      "low_efficiency_symptoms": "只写 x>=0；M 巨大；McCormick 包络弱；系数范围跨 1e-6 到 1e9。",
+      "expert_actions": "显式写变量属性 bounds；统一元/万元、秒/小时、kW/MW；避免巨大惩罚权重。",
+      "model_examples": "所有 LP/MIP/MINLP；生产量、库存、载重、调度开始时间、能量状态。 模型：若 2x - 2 <= 4 且 x <= 4，则可推出 x <= 3。生产 q_t <= sum_{tau>=t} d_tau；调度 0 <= s_i <= H - p_i。",
+      "benchmark_guidance": "naive: 无上界或上界过松；expert: tight bounds；比较 root gap、coefficient range、presolve reduction。",
+      "semantic_equivalents": [
+        "变量上下界紧化与尺度归一化",
+        "Bound tightening; scaling",
+        "显式写变量属性 bounds；统一元/万元、秒/小时、kW/MW；避免巨大惩罚权重。"
+      ]
+    },
+    {
+      "tech_id": "T04",
+      "name": "整数规划线性松弛",
+      "english": "LP relaxation of IP/MIP",
+      "category": "整数/离散建模",
+      "core_use": "将整数变量放宽为连续变量，用于界、root gap 诊断和割平面设计。",
+      "core_idea": "线性松弛不是最终模型，而是评价 formulation 强弱的基准。",
+      "low_efficiency_symptoms": "小规模可解，大规模分支定界节点爆炸；root gap 大。",
+      "expert_actions": "先求 LP relaxation，观察分数模式；决定加 T07/T10/T25/T48/T49。",
+      "model_examples": "背包、设施选址、TSP、调度、装箱、set packing。 模型：x_i in {0,1} -> 0 <= x_i <= 1. RootGap = |z_IP - z_LP|/(1+|z_IP|).",
+      "benchmark_guidance": "naive: 只看能否求解；expert: 报告 LP relaxation、fractional pattern、root gap。",
+      "semantic_equivalents": [
+        "整数规划线性松弛",
+        "LP relaxation of IP/MIP",
+        "先求 LP relaxation，观察分数模式；决定加 T07/T10/T25/T48/T49。"
+      ]
+    },
+    {
+      "tech_id": "T05",
+      "name": "大 M 法",
+      "english": "Big-M method",
+      "category": "整数/离散建模",
+      "core_use": "用 M 表达条件约束或变量激活，关键是 M 由变量上下界逐约束推导。",
+      "core_idea": "大 M 不是越大越安全；过大 M 会削弱松弛并造成数值病态。",
+      "low_efficiency_symptoms": "M=1e6/1e9；所有约束共用 M；系数范围巨大；root gap 大。",
+      "expert_actions": "先做 T03，计算 tight M_i；可替换为 T06 indicator 或 semi-continuous。",
+      "model_examples": "条件容量、设施开关、任务不重叠、机组启停、批量生产。 模型：y=1 => a^T x <= b 写为 a^T x <= b + M(1-y). M_i = max_{x in [l,u]}(a_i^T x - b_i). 若 0<=x<=U，y=0 => x=0 可写 0<=x<=U y。",
+      "benchmark_guidance": "naive: 任意 M；expert: tight M 或 indicator；评价 M_used/M_tight、coeff range、root gap。",
+      "semantic_equivalents": [
+        "大 M 法",
+        "Big-M method",
+        "先做 T03，计算 tight M_i；可替换为 T06 indicator 或 semi-continuous。"
+      ]
+    },
+    {
+      "tech_id": "T06",
+      "name": "指示约束、半连续变量与特殊有序集",
+      "english": "Indicator; semicontinuous; SOS",
+      "category": "整数/离散建模",
+      "core_use": "调用求解器原生结构表达蕴含、互斥、半连续和分段相邻性。",
+      "core_idea": "原生结构让语义更清晰，也可让求解器采用专门分支、预处理或内部 reformulation。",
+      "low_efficiency_symptoms": "手写 Big-M 过多；pairwise 互斥约束多；PWL 分段错。",
+      "expert_actions": "使用 indicator、semicontinuous、SOS1/SOS2、CP-SAT enforcement literal；说明求解器兼容性。",
+      "model_examples": "Gurobi/CPLEX/SCIP/CP-SAT；PWL、互斥、半连续产量、开关资源。 模型：indicator: y=1 -> g(x)<=0. semicontinuous: x=0 或 L<=x<=U. SOS1: 一组变量最多一个非零；SOS2: λ_k 最多两个相邻非零。 CP-SAT enforcement: enforced(l=1): g(x)<=0。",
+      "benchmark_guidance": "naive: Big-M 展开；expert: solver-native 结构并说明适用条件。",
+      "semantic_equivalents": [
+        "指示约束、半连续变量与特殊有序集",
+        "Indicator; semicontinuous; SOS",
+        "使用 indicator、semicontinuous、SOS1/SOS2、CP-SAT enforcement literal；说明求解器兼容性。"
+      ]
+    },
+    {
+      "tech_id": "T07",
+      "name": "有效不等式与割平面",
+      "english": "Valid inequalities; cutting planes",
+      "category": "松弛强化",
+      "core_use": "加入所有整数可行解满足、但能切掉松弛分数解的不等式；静态为有效不等式，动态为割平面。",
+      "core_idea": "有效不等式可静态加入；割平面通常在求解过程中根据当前分数解动态分离。",
+      "low_efficiency_symptoms": "LP 松弛分数解多；最优可行解已找到但证明最优性慢。",
+      "expert_actions": "根据问题结构添加 cover、clique、SEC、capacity、flow cover 或 lazy cuts。",
+      "model_examples": "背包、TSP/VRP、设施选址、set packing、网络设计。 模型：Cover cut: 若 sum_{i in C} a_i > b，则 sum_{i in C} x_i <= |C|-1。Generic cut: α^T x <= β 对所有整数可行解有效。",
+      "benchmark_guidance": "naive: 基础约束；expert: 按结构加 cuts；比较 root gap/node count/cut count。",
+      "semantic_equivalents": [
+        "有效不等式与割平面",
+        "Valid inequalities; cutting planes",
+        "根据问题结构添加 cover、clique、SEC、capacity、flow cover 或 lazy cuts。"
+      ]
+    },
+    {
+      "tech_id": "T08",
+      "name": "变量替换与乘积线性化",
+      "english": "Substitution; product linearization",
+      "category": "非线性/凸建模",
+      "core_use": "对 binary-continuous、binary-binary 乘积线性化；对有界连续双线性用包络。",
+      "core_idea": "乘积是否可线性化取决于变量类型和上下界；缺 bounds 会导致弱或无效 formulation。",
+      "low_efficiency_symptoms": "直接写 z=x*y 变成非凸 MINLP；无变量上下界。",
+      "expert_actions": "binary-continuous 用四不等式；binary-binary 用 AND 约束；连续乘积转 T10 McCormick。",
+      "model_examples": "开关产量、逻辑 AND、固定费用、鲁棒线性化、激活约束。 模型：z = x y, y∈{0,1}, 0<=x<=U: z<=U y, z<=x, z>=x-U(1-y), z>=0。 Binary AND: z<=x, z<=y, z>=x+y-1。",
+      "benchmark_guidance": "naive: 非凸乘积；expert: 线性化并给 bounds。",
+      "semantic_equivalents": [
+        "变量替换与乘积线性化",
+        "Substitution; product linearization",
+        "binary-continuous 用四不等式；binary-binary 用 AND 约束；连续乘积转 T10 McCormick。"
+      ]
+    },
+    {
+      "tech_id": "T09",
+      "name": "分段线性化",
+      "english": "Piecewise-linear modeling",
+      "category": "非线性/凸建模",
+      "core_use": "用 SOS2、lambda、增量变量、对数编码或 epigraph cuts 表达 PWL。",
+      "core_idea": "凸 PWL 最小化不一定需要 binary；一般或非凸 PWL 需要 SOS2/native PWL 或 binary。",
+      "low_efficiency_symptoms": "在优化变量上 if-else；分段变量无顺序；凸 PWL 误用大量 binary。",
+      "expert_actions": "根据凸性和目标方向选择 epigraph cuts、SOS2、incremental 或 solver-native PWL。",
+      "model_examples": "阶梯电价、折扣、成本曲线、效率曲线、税率。 模型：lambda: x=sum_k λ_k x_k, y=sum_k λ_k y_k, sum_k λ_k=1, λ>=0, SOS2(λ)。 Convex PWL epigraph: y >= a_k x + b_k, for all k。",
+      "benchmark_guidance": "naive: if-else 或枚举段；expert: 合适 PWL 表达；比较 binary 数和 solve time。",
+      "semantic_equivalents": [
+        "分段线性化",
+        "Piecewise-linear modeling",
+        "根据凸性和目标方向选择 epigraph cuts、SOS2、incremental 或 solver-native PWL。",
+        "epigraph cuts",
+        "native PWL",
+        "SOS2/lambda",
+        "incremental segments"
+      ]
+    },
+    {
+      "tech_id": "T10",
+      "name": "凸包/包络松弛与凸化",
+      "english": "Convex hull/envelope; convexification",
+      "category": "松弛强化",
+      "core_use": "对非凸或离散集合构造更紧凸松弛，包括 convex hull、ideal formulation、McCormick、perspective。",
+      "core_idea": "凸包/理想表述是整体 formulation 思想；不同于 T07 的“加一条 cut”。",
+      "low_efficiency_symptoms": "Big-M 松弛弱；continuous relaxation 与整数解差距大。",
+      "expert_actions": "选择凸包/理想表述、扩展变量、McCormick 包络、透视函数或半定松弛。",
+      "model_examples": "固定费用凸优化、PWL、双线性、机组组合、稀疏投资组合。 模型：conv(S) 为集合 S 的最紧凸松弛。 McCormick: z=xy, x∈[lx,ux], y∈[ly,uy]: z >= lx y + ly x - lx ly; z >= ux y + uy x - ux uy; z <= ux y + ly x - ux ly; z <= lx y + uy x - lx uy。 Perspective: y f(x/y) 用于 y∈{0,1} 激活凸函数。",
+      "benchmark_guidance": "naive: 紧凑但弱；expert: 更大但 root gap 显著更小。",
+      "semantic_equivalents": [
+        "凸包/包络松弛与凸化",
+        "Convex hull/envelope; convexification",
+        "选择凸包/理想表述、扩展变量、McCormick 包络、透视函数或半定松弛。"
+      ]
+    },
+    {
+      "tech_id": "T11",
+      "name": "锥规划变换",
+      "english": "Conic reformulation",
+      "category": "非线性/凸建模",
+      "core_use": "识别范数、二次、指数、对数、幂函数为 SOCP/SDP/指数锥/幂锥。",
+      "core_idea": "把凸非线性结构交给一般 NLP 往往慢且不稳；锥形式能利用内点法和凸性保证。",
+      "low_efficiency_symptoms": "sqrt/log/exp 给普通 NLP；粗糙 PWL 近似导致模型大。",
+      "expert_actions": "转 SOCP、rotated cone、SDP、exponential cone、power cone。",
+      "model_examples": "鲁棒优化、投资组合、功率系统、熵正则、几何规划、半定松弛。 模型：SOCP: ||A x + b||_2 <= t。 Rotated cone: x^2 <= y z, y,z>=0。 SDP: X ⪰ 0。Exp cone: (x,y,z)∈K_exp 可表达 y exp(x/y) <= z。",
+      "benchmark_guidance": "naive: 黑箱 NLP；expert: conic formulation；指标为求解状态、迭代数、稳定性。",
+      "semantic_equivalents": [
+        "锥规划变换",
+        "Conic reformulation",
+        "转 SOCP、rotated cone、SDP、exponential cone、power cone。"
+      ]
+    },
+    {
+      "tech_id": "T12",
+      "name": "对偶变换",
+      "english": "Dual transformation",
+      "category": "对偶/最优性",
+      "core_use": "利用 LP/凸优化对偶处理内层最优化、鲁棒约束、界估计和灵敏度。",
+      "core_idea": "对偶变换可以把 min-max、鲁棒约束和双层凸问题转成单层可解模型。",
+      "low_efficiency_symptoms": "显式保留 max/min 内层；枚举不确定情景；不检查强对偶条件。",
+      "expert_actions": "写出内层 primal/dual；检查凸性、可行性、有界性和强对偶；转单层模型。",
+      "model_examples": "鲁棒优化、Lasso 原始-对偶、双层凸问题、影子价格分析。 模型：Budget robust cost: max_{0<=z<=1, 1^T z<=Γ} (d∘x)^T z -> min_{θ>=0,s>=0} Γθ+1^T s, θ+s_j >= d_j x_j。 LP dual: min c^T x s.t. A x >= b, x>=0 -> max b^T y s.t. A^T y <= c, y>=0。",
+      "benchmark_guidance": "naive: 枚举不确定情景；expert: dual counterpart；指标为场景数、变量数、求解时间。",
+      "semantic_equivalents": [
+        "对偶变换",
+        "Dual transformation",
+        "写出内层 primal/dual；检查凸性、可行性、有界性和强对偶；转单层模型。"
+      ]
+    },
+    {
+      "tech_id": "T13",
+      "name": "拉格朗日松弛",
+      "english": "Lagrangian relaxation",
+      "category": "分解/大规模",
+      "core_use": "将耦合约束乘以乘子加入目标，使子问题可分并提供界。",
+      "core_idea": "适合耦合约束少、去掉耦合后子问题易解的结构。",
+      "low_efficiency_symptoms": "容量/资源耦合导致单体模型巨大。",
+      "expert_actions": "识别 complicating constraints；构造拉格朗日函数；用次梯度/Bundle 更新乘子。",
+      "model_examples": "机组组合、列车运行图、网络资源、供应链。 模型：For min f(x) s.t. A x<=b, L(x,λ)=f(x)+λ^T(Ax-b), λ>=0；dual bound q(λ)=inf_x L(x,λ)。",
+      "benchmark_guidance": "naive: 巨型 MIP；expert: Lagrangian bound + 子问题分解。",
+      "semantic_equivalents": [
+        "拉格朗日松弛",
+        "Lagrangian relaxation",
+        "识别 complicating constraints；构造拉格朗日函数；用次梯度/Bundle 更新乘子。"
+      ]
+    },
+    {
+      "tech_id": "T14",
+      "name": "增广拉格朗日与 ADMM 分解",
+      "english": "Augmented Lagrangian; ADMM",
+      "category": "分解/大规模",
+      "core_use": "在拉格朗日项上加二次惩罚，按变量块交替优化并协调一致性。",
+      "core_idea": "适合连续凸、可分、需要分布式或隐私保护的场景。",
+      "low_efficiency_symptoms": "集中式模型规模大；多主体隐私或并行需求。",
+      "expert_actions": "构造 x-update/z-update/dual-update；检查可分性和收敛条件。",
+      "model_examples": "能源系统、机器学习、共识优化、分布式控制。 模型：min f(x)+g(z), s.t. A x + B z = c。 x^{k+1}=argmin_x L_ρ(x,z^k,u^k); z^{k+1}=argmin_z L_ρ(x^{k+1},z,u^k); u^{k+1}=u^k + A x^{k+1}+B z^{k+1}-c。",
+      "benchmark_guidance": "naive: 集中式大模型；expert: ADMM 分块并行。",
+      "semantic_equivalents": [
+        "增广拉格朗日与 ADMM 分解",
+        "Augmented Lagrangian; ADMM",
+        "构造 x-update/z-update/dual-update；检查可分性和收敛条件。"
+      ]
+    },
+    {
+      "tech_id": "T15",
+      "name": "问题分块分解",
+      "english": "Block decomposition",
+      "category": "分解/大规模",
+      "core_use": "按时间、场景、区域、变量类型或约束块拆分模型。",
+      "core_idea": "按时间、场景、区域、变量类型或约束块拆分，目的是暴露可分性和协调变量。",
+      "low_efficiency_symptoms": "所有变量和约束堆成一个巨型模型。",
+      "expert_actions": "识别 coupling variables/constraints；选择滚动时域、场景分解、区域分解或变量分块。",
+      "model_examples": "长时域调度、多场景随机、大规模网络设计。 模型：min sum_k f_k(x_k)+φ(y), s.t. A_k x_k + B_k y <= b_k, k=1,...,K。",
+      "benchmark_guidance": "naive: monolithic model；expert: block decomposition。",
+      "semantic_equivalents": [
+        "问题分块分解",
+        "Block decomposition",
+        "识别 coupling variables/constraints；选择滚动时域、场景分解、区域分解或变量分块。"
+      ]
+    },
+    {
+      "tech_id": "T16",
+      "name": "Benders 分解",
+      "english": "Benders decomposition",
+      "category": "分解/大规模",
+      "core_use": "主问题处理设计/整数变量，子问题处理连续运营或可行性并返回 cuts。",
+      "core_idea": "主问题处理设计/整数变量，子问题处理连续运营或可行性。",
+      "low_efficiency_symptoms": "设计变量少但运营变量/情景多，单体模型巨大。",
+      "expert_actions": "主问题 y，子问题 x；返回 feasibility/optimality cuts。",
+      "model_examples": "设施选址、网络设计、两阶段随机规划、容量规划。 模型：min f^T y + Q(y), Q(y)=min{c^T x | A x >= b - B y, x>=0}。 Benders cut: η >= π^T(b-B y)，其中 π 为子问题对偶极点；可行性 cut 由极射线给出。",
+      "benchmark_guidance": "naive: 单体模型超时；expert: Benders iterations。",
+      "semantic_equivalents": [
+        "Benders 分解",
+        "Benders decomposition",
+        "主问题 y，子问题 x；返回 feasibility/optimality cuts。",
+        "Benders master/subproblem",
+        "feasibility cuts",
+        "optimality cuts"
+      ]
+    },
+    {
+      "tech_id": "T17",
+      "name": "Dantzig-Wolfe 分解与列生成",
+      "english": "Dantzig-Wolfe; column generation",
+      "category": "分解/大规模",
+      "core_use": "将路径、班次、切割模式等作为列，动态生成负 reduced cost 列。",
+      "core_idea": "把复杂可行模式作为列变量，仅动态生成有价值的列。",
+      "low_efficiency_symptoms": "一次性枚举所有模式/路径不可行。",
+      "expert_actions": "主问题 set partitioning/covering；pricing 子问题生成负 reduced cost 列。",
+      "model_examples": "VRP、crew scheduling、cutting stock、班次生成。 模型：x = sum_{p∈P} λ_p a_p, sum_p λ_p=1, λ_p>=0。 Restricted master: min sum_p c_p λ_p, s.t. sum_p a_{ip}λ_p >= 1。Pricing: min_p c_p - u^T a_p。",
+      "benchmark_guidance": "naive: 枚举列；expert: column generation。",
+      "semantic_equivalents": [
+        "Dantzig-Wolfe 分解与列生成",
+        "Dantzig-Wolfe; column generation",
+        "主问题 set partitioning/covering；pricing 子问题生成负 reduced cost 列。",
+        "Dantzig-Wolfe decomposition",
+        "column generation",
+        "pricing problem"
+      ]
+    },
+    {
+      "tech_id": "T18",
+      "name": "网络流与匹配结构建模",
+      "english": "Network flow; matching",
+      "category": "专用结构",
+      "core_use": "用流守恒、容量、费用、源汇、二分图匹配表达特殊结构，利用总酉性。",
+      "core_idea": "网络矩阵和匹配多面体常有总酉性，可用 LP 解整数问题。",
+      "low_efficiency_symptoms": "枚举路径；用普通 MIP 表达网络流；给匹配强加 binary。",
+      "expert_actions": "写 flow conservation；识别 min-cost flow、network simplex 或 matching formulation。",
+      "model_examples": "运输、转运、最短路、最大流、最小费用流、二分图匹配。 模型：Flow balance: sum_{j:(i,j)∈A} x_ij - sum_{j:(j,i)∈A} x_ji = b_i；0<=x_ij<=u_ij。",
+      "benchmark_guidance": "naive: 普通 MIP/路径枚举；expert: min-cost flow/matching formulation。",
+      "semantic_equivalents": [
+        "网络流与匹配结构建模",
+        "Network flow; matching",
+        "写 flow conservation；识别 min-cost flow、network simplex 或 matching formulation。"
+      ]
+    },
+    {
+      "tech_id": "T19",
+      "name": "覆盖、划分与装箱/背包建模",
+      "english": "Covering/partitioning/packing/knapsack",
+      "category": "专用结构",
+      "core_use": "把候选集合、路线、班次、切割模式抽象成覆盖/划分/装箱/背包模型。",
+      "core_idea": "列变量能直接表达复杂组合方案，比逐元素变量更清晰。",
+      "low_efficiency_symptoms": "逻辑分配混乱；逐元素建模难表达业务模式。",
+      "expert_actions": "抽象为 λ_p 列变量；配合 T07/T17/T24 强化和列生成。",
+      "model_examples": "排班、车辆路径、切割库存、资本预算、资源选择。 模型：Set partitioning: sum_{p: i∈p} λ_p = 1 for all i。 Set covering: >=1；set packing: <=1。 Knapsack: sum_i a_i x_i <= b, x_i∈{0,1}。",
+      "benchmark_guidance": "naive: 逐元素分配；expert: set covering/partitioning 或 knapsack formulation。",
+      "semantic_equivalents": [
+        "覆盖、划分与装箱/背包建模",
+        "Covering/partitioning/packing/knapsack",
+        "抽象为 λ_p 列变量；配合 T07/T17/T24 强化和列生成。"
+      ]
+    },
+    {
+      "tech_id": "T20",
+      "name": "调度与时序建模",
+      "english": "Scheduling and temporal modeling",
+      "category": "专用结构",
+      "core_use": "用开始时间、完成时间、顺序变量、时间索引或 CP 区间变量替代排列枚举。",
+      "core_idea": "用决策变量表达顺序和时间，而不是枚举排列。",
+      "low_efficiency_symptoms": "代码出现 permutations(jobs)；开始时间无界；Big-M 松；同质机器对称。",
+      "expert_actions": "根据时间尺度选择连续时间 disjunctive MILP、time-indexed formulation 或 CP interval。",
+      "model_examples": "单机/多机调度、job-shop、排班、课程表、项目调度。 模型：s_i+p_i <= s_j + M(1-z_ij)，s_j+p_j <= s_i + M z_ij。 CP-SAT: interval_i=(s_i,p_i,e_i), NoOverlap(intervals)。",
+      "benchmark_guidance": "naive: 枚举顺序；expert: MILP/CP-SAT；比较 first feasible time、node/conflict count。",
+      "semantic_equivalents": [
+        "调度与时序建模",
+        "Scheduling and temporal modeling",
+        "根据时间尺度选择连续时间 disjunctive MILP、time-indexed formulation 或 CP interval。"
+      ]
+    },
+    {
+      "tech_id": "T21",
+      "name": "路径与路由建模",
+      "english": "Routing/path modeling",
+      "category": "专用结构",
+      "core_use": "处理 TSP/VRP 的度约束、子环消除、容量割、流模型、路径列和 lazy cuts。",
+      "core_idea": "路由问题需要度约束、连通性、容量和子环控制；只写度约束通常不够。",
+      "low_efficiency_symptoms": "只写每点入度出度为 1，产生子环；枚举所有路径。",
+      "expert_actions": "加入 SEC、MTZ、flow formulation、capacity cuts 或 lazy constraints；大规模用路径列。",
+      "model_examples": "TSP、CVRP、VRPTW、网络设计。 模型：Degree: sum_j x_ij=1, sum_i x_ij=1。 SEC: sum_{i,j∈S} x_ij <= |S|-1。 MTZ: u_i - u_j + n x_ij <= n-1。",
+      "benchmark_guidance": "naive: 度约束/路径枚举；expert: subtour/capacity/lazy/path formulation。",
+      "semantic_equivalents": [
+        "路径与路由建模",
+        "Routing/path modeling",
+        "加入 SEC、MTZ、flow formulation、capacity cuts 或 lazy constraints；大规模用路径列。",
+        "subtour elimination",
+        "MTZ formulation",
+        "SEC/lazy constraints",
+        "capacity cuts"
+      ]
+    },
+    {
+      "tech_id": "T22",
+      "name": "鲁棒优化等价转化",
+      "english": "Robust counterpart",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "将不确定集上的无限约束通过对偶或锥结构转成有限维鲁棒对应问题。",
+      "core_idea": "核心是避免枚举所有扰动情景，保留 worst-case 保证。",
+      "low_efficiency_symptoms": "枚举所有扰动；保留无限约束；交给普通 NLP。",
+      "expert_actions": "多面体不确定集用 LP 对偶；椭球集用 SOCP；预算不确定用线性鲁棒对应。",
+      "model_examples": "需求不确定、鲁棒投资组合、电力备用、鲁棒回归、供应链。 模型：a(u)^T x <= b for all u∈U。若 a(u)=a0+B u，则 a0^T x + max_{u∈U} u^T B^T x <= b；再对 max 对偶化。",
+      "benchmark_guidance": "naive: 场景枚举；expert: robust counterpart；指标为场景数、模型规模、objective 保守性。",
+      "semantic_equivalents": [
+        "鲁棒优化等价转化",
+        "Robust counterpart",
+        "多面体不确定集用 LP 对偶；椭球集用 SOCP；预算不确定用线性鲁棒对应。"
+      ]
+    },
+    {
+      "tech_id": "T23",
+      "name": "随机优化场景建模与分解",
+      "english": "Stochastic programming; scenario decomposition",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "用情景变量、非预见性约束、期望/风险目标表达随机优化，并可分解。",
+      "core_idea": "随机优化不是简单把所有情景堆叠；阶段性和非预见性是关键。",
+      "low_efficiency_symptoms": "把随机问题当确定性；情景展开巨大且无分解；第一阶段变量随情景变化。",
+      "expert_actions": "区分第一/第二阶段变量；加非预见性约束；用 Benders/Progressive Hedging/场景分解。",
+      "model_examples": "两阶段随机规划、库存、供应链、能源调度、金融风险。 模型：min c^T x + E_s[Q_s(x)], Q_s(x)=min q_s^T y_s s.t. W_s y_s >= h_s - T_s x。x is nonanticipative。",
+      "benchmark_guidance": "naive: 全情景单体；expert: scenario decomposition/nonanticipativity。",
+      "semantic_equivalents": [
+        "随机优化场景建模与分解",
+        "Stochastic programming; scenario decomposition",
+        "区分第一/第二阶段变量；加非预见性约束；用 Benders/Progressive Hedging/场景分解。"
+      ]
+    },
+    {
+      "tech_id": "T24",
+      "name": "预处理与支配关系删除",
+      "english": "Preprocessing; dominance",
+      "category": "松弛强化/专用结构",
+      "core_use": "删除不可能最优/不可行的变量、列、边、路径或冗余约束。",
+      "core_idea": "预处理是在建模前或求解前删除不可能有用的变量、列、边、路径或冗余约束。它不是 T07 的 cut，而是减少模型规模和改善数值结构的建模动作。",
+      "low_efficiency_symptoms": "全笛卡尔积变量过多；候选路径/模式爆炸；许多变量由业务规则看永远不可行或被支配；冗余约束增加 presolve 负担。",
+      "expert_actions": "只为可行候选创建变量；删除被支配列/路径/设施；做兼容性筛选；保留可复现实验的过滤规则。",
+      "model_examples": "背包、路径选择、排班模式、切割库存、设施选址、指派兼容性。 模型：若任务 i 不兼容机器 j，则不创建 x_ij，而不是创建后加 x_ij=0。 若列 p 成本 c_p>=c_q 且服务集合 A_p⊆A_q，则 p 被 q 支配，可删除 p。",
+      "benchmark_guidance": "naive: 为所有组合建变量；expert: sparse index set + dominance filtering；指标为变量数、构建时间、presolve reduction。",
+      "semantic_equivalents": [
+        "预处理与支配关系删除",
+        "Preprocessing; dominance",
+        "只为可行候选创建变量；删除被支配列/路径/设施；做兼容性筛选；保留可复现实验的过滤规则。"
+      ]
+    },
+    {
+      "tech_id": "T25",
+      "name": "对称性破除",
+      "english": "Symmetry breaking",
+      "category": "专用结构",
+      "core_use": "对相同机器、车辆、簇、颜色等同质对象施加排序、固定代表或字典序。",
+      "core_idea": "对同质对象加排序或代表约束可以减少等价解搜索。",
+      "low_efficiency_symptoms": "相同机器/车辆/箱子/簇可任意交换，求解器重复搜索。",
+      "expert_actions": "加入负载排序、固定代表、字典序约束；避免过强约束误删最优解。",
+      "model_examples": "并行机调度、车辆路径、装箱、图着色、聚类。 模型：相同机器负载 L_1>=L_2>=...>=L_m。装箱中 y_1>=y_2>=...>=y_B。",
+      "benchmark_guidance": "naive: 无对称处理；expert: symmetry-breaking constraints；比较 node count。",
+      "semantic_equivalents": [
+        "对称性破除",
+        "Symmetry breaking",
+        "加入负载排序、固定代表、字典序约束；避免过强约束误删最优解。"
+      ]
+    },
+    {
+      "tech_id": "T26",
+      "name": "互补约束与 KKT 建模",
+      "english": "Complementarity; KKT/MPEC",
+      "category": "整数/离散建模",
+      "core_use": "处理 x>=0,y>=0,xy=0，或在条件满足时用 KKT 替代下层优化。",
+      "core_idea": "互补和 KKT 是最优性条件，不是普通代数等式；必须同时包含原始可行、对偶可行、驻点和互补。",
+      "low_efficiency_symptoms": "直接写非凸乘积；KKT 漏对偶可行性/互补；非凸下层滥用 KKT。",
+      "expert_actions": "先检查 T45；若可用，选择 SOS1、binary+M、MPEC 或保留双层结构。",
+      "model_examples": "市场均衡、MPEC、双层规划、稀疏选择、约束激活状态。 模型：0 <= x ⟂ y >= 0 等价于 x>=0, y>=0, x y=0. KKT: ∇f(x)+A^T λ+G^T μ=0, h(x)=0, g(x)<=0, μ>=0, μ_i g_i(x)=0。",
+      "benchmark_guidance": "naive: 盲目 KKT；expert: 说明凸性/CQ/强对偶并给完整条件。",
+      "semantic_equivalents": [
+        "互补约束与 KKT 建模",
+        "Complementarity; KKT/MPEC",
+        "先检查 T45；若可用，选择 SOS1、binary+M、MPEC 或保留双层结构。"
+      ]
+    },
+    {
+      "tech_id": "T27",
+      "name": "多目标与词典序建模",
+      "english": "Multi-objective; lexicographic optimization",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "多目标不一律用巨大权重，可用词典序、分层优化或归一化加权。",
+      "core_idea": "优先级目标不应一律用巨大权重相加，否则会造成数值病态或改变优先级。",
+      "low_efficiency_symptoms": "目标中出现 1e9*priority；次级目标影响主目标；尺度不一致。",
+      "expert_actions": "用词典序优化、ε-constraint、分层优化或归一化加权；记录每层目标。",
+      "model_examples": "服务水平优先于成本、调度优先级、可行性优先、风险-收益权衡。 模型：Lexicographic: 先求 z1*=min f1(x)，再求 min f2(x) s.t. f1(x)<=z1*+ε。",
+      "benchmark_guidance": "naive: 巨大权重；expert: lexicographic/epsilon constraint。",
+      "semantic_equivalents": [
+        "多目标与词典序建模",
+        "Multi-objective; lexicographic optimization",
+        "用词典序优化、ε-constraint、分层优化或归一化加权；记录每层目标。"
+      ]
+    },
+    {
+      "tech_id": "T28",
+      "name": "罚函数、松弛变量与可行性修复",
+      "english": "Penalty/slack/feasibility relaxation",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "对软约束引入松弛变量并合理惩罚，用于不可行诊断或服务水平权衡。",
+      "core_idea": "软约束需要可解释松弛和合理惩罚；不可行诊断需要告诉哪些约束被放松。",
+      "low_efficiency_symptoms": "不可行时直接失败；惩罚系数任意巨大；违约无解释。",
+      "expert_actions": "为每类软约束引入 slack；按业务成本校准惩罚；区分 Phase-I 可行性修复和最终目标。",
+      "model_examples": "需求满足、服务水平、资源不足、数据冲突、SLA。 模型：sum_i x_i + s >= d, s>=0；objective += ρ s。可行性修复：min sum_k ρ_k s_k。",
+      "benchmark_guidance": "naive: 直接 infeasible 或 1e9 penalty；expert: feasibility relaxation + report。",
+      "semantic_equivalents": [
+        "罚函数、松弛变量与可行性修复",
+        "Penalty/slack/feasibility relaxation",
+        "为每类软约束引入 slack；按业务成本校准惩罚；区分 Phase-I 可行性修复和最终目标。"
+      ]
+    },
+    {
+      "tech_id": "T29",
+      "name": "求解器原生结构调用",
+      "english": "Solver-native constructs",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "直接使用 indicator、SOS、PWL、NoOverlap、Cumulative、Cone 等结构。",
+      "core_idea": "能用原生结构时，不应总是手写展开；原生结构有助于求解器识别语义。",
+      "low_efficiency_symptoms": "手写线性化冗长、难调试；CP 问题强行 MILP；PWL/SOS 写错。",
+      "expert_actions": "使用 indicator、SOS、PWL、NoOverlap、Cumulative、Cone、general constraints；说明可替代方案。",
+      "model_examples": "Gurobi/CPLEX/SCIP、OR-Tools CP-SAT、MOSEK、Pyomo/JuMP。 模型：NoOverlap(intervals)；Cumulative(intervals, demands, capacity)；addGenConstrPWL(x,y,breakpoints)。",
+      "benchmark_guidance": "naive: 手写展开；expert: solver-native construct + compatibility。",
+      "semantic_equivalents": [
+        "求解器原生结构调用",
+        "Solver-native constructs",
+        "使用 indicator、SOS、PWL、NoOverlap、Cumulative、Cone、general constraints；说明可替代方案。"
+      ]
+    },
+    {
+      "tech_id": "T30",
+      "name": "热启动与启发式初解",
+      "english": "Warm start; incumbent injection",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "给 MIP/CP 求解器提供初始可行解，加快 incumbent 建立和剪枝。",
+      "core_idea": "好的初始可行解可加快 incumbent 建立和剪枝，尤其适合 MIP/CP/VRP/调度。",
+      "low_efficiency_symptoms": "求解器很久找不到可行解；incumbent 差，gap 长时间不下降。",
+      "expert_actions": "用贪心、规则、历史解或松弛舍入构造初解；检查初解可行性后传入求解器。",
+      "model_examples": "MIP、VRP、调度、网络设计、设施选址。 模型：MIP start: x_i.start = x_i^0；CP hint: solver.AddHint(var,value)。",
+      "benchmark_guidance": "naive: 无初解；expert: warm start/incumbent injection。",
+      "semantic_equivalents": [
+        "热启动与启发式初解",
+        "Warm start; incumbent injection",
+        "用贪心、规则、历史解或松弛舍入构造初解；检查初解可行性后传入求解器。"
+      ]
+    },
+    {
+      "tech_id": "T31",
+      "name": "算法-模型匹配",
+      "english": "Algorithm-structure matching",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "根据模型结构选择 LP/QP/SOCP/MIP/CP/network flow/NLP 求解框架。",
+      "core_idea": "建模效率不仅取决于公式，还取决于模型结构与求解器/算法是否匹配。",
+      "low_efficiency_symptoms": "SOCP 给普通 NLP；网络流给通用 MIP；调度用排列枚举。",
+      "expert_actions": "识别 LP/QP/SOCP/SDP/MIP/CP/network flow/NLP；选择相应求解器和接口。",
+      "model_examples": "所有优化建模任务。 规则：网络流 -> min-cost flow/network simplex；范数/鲁棒椭球 -> SOCP；调度逻辑 -> CP-SAT 或 disjunctive MILP；凸 PWL -> epigraph/native PWL。",
+      "benchmark_guidance": "naive: 求解器错配；expert: algorithm-structure matching。",
+      "semantic_equivalents": [
+        "算法-模型匹配",
+        "Algorithm-structure matching",
+        "识别 LP/QP/SOCP/SDP/MIP/CP/network flow/NLP；选择相应求解器和接口。"
+      ]
+    },
+    {
+      "tech_id": "T32",
+      "name": "求解器日志驱动的模型诊断",
+      "english": "Solver-log-guided diagnosis",
+      "category": "鲁棒/随机/求解器",
+      "core_use": "解析 root gap、node count、MIP gap、coeff range、presolve reduction 解释慢因。",
+      "core_idea": "求解器日志能说明慢因：模型弱、数值病态、规模过大或对称性严重。",
+      "low_efficiency_symptoms": "只看 timeout，不知道为什么慢；反复改代码但不改 formulation。",
+      "expert_actions": "解析 root gap、node count、MIP gap 曲线、coeff range、presolve reduction、cut count。",
+      "model_examples": "LLM 自动诊断、solver-feedback reformulation、benchmark 评分。 信号：root gap 大 -> 松弛弱；node count 爆炸 -> 对称性/cuts 不足；coeff range 大 -> scaling/Big-M 问题；presolve 少 -> 结构未暴露。",
+      "benchmark_guidance": "naive: 只报告 timeout；expert: 日志解释+重写建议。",
+      "semantic_equivalents": [
+        "求解器日志驱动的模型诊断",
+        "Solver-log-guided diagnosis",
+        "解析 root gap、node count、MIP gap 曲线、coeff range、presolve reduction、cut count。"
+      ]
+    },
+    {
+      "tech_id": "T33",
+      "name": "标准型/规范型转换",
+      "english": "Standard/canonical form transformation",
+      "category": "基础标准化",
+      "core_use": "把 LP/QP/SOCP/SDP 等转成理论分析或求解器接口需要的标准形式。",
+      "core_idea": "统一目标方向、变量域、约束方向和矩阵形式，使模型可验证、可复用、可自动代码生成。",
+      "low_efficiency_symptoms": "模型形式混乱；求解器接口不匹配；变量符号、目标方向和约束方向不清楚。",
+      "expert_actions": "明确模型类别 LP/QP/SOCP/SDP/MIP；把等式、不等式和变量域分区记录。",
+      "model_examples": "线性规划、二次规划、二阶锥规划、半定规划；模型验证和自动代码生成。 LP: min c^T x, s.t. A x = b, G x <= h, l <= x <= u. QP: min 1/2 x^T Q x + c^T x, s.t. A x <= b, Q >= 0.",
+      "benchmark_guidance": "naive: 混合形式难以验证；expert: canonical form + solver mapping。",
+      "semantic_equivalents": [
+        "标准型/规范型转换",
+        "Standard/canonical form transformation",
+        "明确模型类别 LP/QP/SOCP/SDP/MIP；把等式、不等式和变量域分区记录。"
+      ]
+    },
+    {
+      "tech_id": "T34",
+      "name": "松弛变量、剩余变量与人工变量",
+      "english": "Slack/surplus/artificial variables",
+      "category": "基础标准化",
+      "core_use": "用松弛/剩余/人工变量处理不等式标准化、可行性修复和初始化。",
+      "core_idea": "松弛/剩余变量把不等式转为等式；人工变量用于 Phase-I 或可行性诊断，不应污染最终目标。",
+      "low_efficiency_symptoms": "不可行时只报错；约束违反不可解释；用巨大惩罚项硬压所有约束。",
+      "expert_actions": "为软约束引入可解释 slack；人工变量仅用于初始化或 Phase-I；最终模型应移除或单独报告人工变量。",
+      "model_examples": "LP 标准化、单纯形初始化、软约束、不可行诊断。 模型：a^T x <= b -> a^T x + s = b, s>=0. a^T x >= b -> a^T x - s = b, s>=0. Phase-I: minimize sum_i r_i, with A x + r = b, r>=0.",
+      "benchmark_guidance": "naive: 直接失败或用巨大罚项；expert: 可行性松弛报告+合理罚系数。",
+      "semantic_equivalents": [
+        "松弛变量、剩余变量与人工变量",
+        "Slack/surplus/artificial variables",
+        "为软约束引入可解释 slack；人工变量仅用于初始化或 Phase-I；最终模型应移除或单独报告人工变量。"
+      ]
+    },
+    {
+      "tech_id": "T35",
+      "name": "变量消元与降维",
+      "english": "Variable elimination for dimension reduction",
+      "category": "基础标准化",
+      "core_use": "利用等式、守恒关系或低维参数化减少变量数量或消除冗余自由度。",
+      "core_idea": "利用等式、守恒关系、低维参数化减少变量数量或消除冗余自由度。",
+      "low_efficiency_symptoms": "变量/约束冗余，矩阵病态，求解器 presolve 负担重。",
+      "expert_actions": "对简单等式直接消元；对保持稀疏性更重要的问题谨慎消元。",
+      "model_examples": "等式约束多、守恒关系强、仿射子空间约束、投影问题。 模型：x + y = 10 可消去 y=10-x。若 B z = x 参数化可行域，则把 x 变量替换为 B z。",
+      "benchmark_guidance": "naive: 全变量+大量等式；expert: 消元后维度下降，或说明保留变量以保持稀疏。",
+      "semantic_equivalents": [
+        "变量消元与降维",
+        "Variable elimination for dimension reduction",
+        "对简单等式直接消元；对保持稀疏性更重要的问题谨慎消元。"
+      ]
+    },
+    {
+      "tech_id": "T36",
+      "name": "凸性判别与 DCP 建模",
+      "english": "Convexity recognition; DCP",
+      "category": "非线性/凸建模",
+      "core_use": "识别凸集、凸函数、保凸运算和 DCP 规则，避免把凸问题误建成非凸。",
+      "core_idea": "凸性判别决定能否使用全局凸优化求解器；目标方向和不等式方向很关键。",
+      "low_efficiency_symptoms": "凸问题被非凸化；目标方向错；约束违反 DCP。",
+      "expert_actions": "检查 Hessian 半正定、组合规则、目标方向和不等式方向；必要时重写为 epigraph/conic form。",
+      "model_examples": "机器学习、风险约束、正则化模型、鲁棒优化、凸二次规划。 模型：Convex minimization: minimize f0(x), f_i(x)<=0 with f_i convex, h_i(x)=0 affine。 Hessian test: ∇²f(x) ⪰ 0。",
+      "benchmark_guidance": "naive: 普通 NLP；expert: DCP/凸优化/SOCP/SDP 标准表达。",
+      "semantic_equivalents": [
+        "凸性判别与 DCP 建模",
+        "Convexity recognition; DCP",
+        "检查 Hessian 半正定、组合规则、目标方向和不等式方向；必要时重写为 epigraph/conic form。"
+      ]
+    },
+    {
+      "tech_id": "T37",
+      "name": "光滑项-非光滑项复合建模",
+      "english": "Smooth + nonsmooth composite modeling",
+      "category": "非线性/凸建模",
+      "core_use": "暴露 f(x)+g(x) 结构，便于近端梯度、ADMM 和分块算法。",
+      "core_idea": "暴露 f(x)+g(x) 结构，使算法能够利用光滑梯度和非光滑近端，而不是强行平滑化。",
+      "low_efficiency_symptoms": "把非光滑项强行求导或平滑化；算法无法利用近端结构。",
+      "expert_actions": "区分光滑损失 f 与可近端正则 g；写清 Lipschitz 梯度、可分块性和 prox。",
+      "model_examples": "Lasso、TV 正则、逻辑回归+正则、稀疏/低秩学习。 模型：min_x f(x)+g(x), f smooth, g proximable。 Lasso: min_x 1/2||A x-b||_2^2 + λ||x||_1。",
+      "benchmark_guidance": "naive: 黑箱可微化；expert: composite model + prox-friendly。",
+      "semantic_equivalents": [
+        "光滑项-非光滑项复合建模",
+        "Smooth + nonsmooth composite modeling",
+        "区分光滑损失 f 与可近端正则 g；写清 Lipschitz 梯度、可分块性和 prox。"
+      ]
+    },
+    {
+      "tech_id": "T38",
+      "name": "凸共轭与 Fenchel 对偶建模",
+      "english": "Convex conjugate; Fenchel duality",
+      "category": "非线性/凸建模/对偶",
+      "core_use": "用共轭函数和 Fenchel 对偶处理正则项、鲁棒项、内层 sup。",
+      "core_idea": "共轭把难处理的 supremum 写成标准函数或对偶约束。",
+      "low_efficiency_symptoms": "鲁棒项/正则项黑箱处理；内层最大化无法消除；场景枚举。",
+      "expert_actions": "识别支撑函数、共轭函数和内层线性/凸优化；应用 Fenchel 对偶或支撑函数化。",
+      "model_examples": "DRO、正则化、支撑函数、最大化内层、鲁棒损失。 模型：f*(y)=sup_x {<y,x>-f(x)}。 Fenchel dual: min_x f(Ax)+g(x) -> max_y -f*(y)-g*(-A^T y)。 Support function: σ_C(y)=sup_{x∈C}<y,x>。",
+      "benchmark_guidance": "naive: 保留嵌套 sup；expert: 共轭/支撑函数化。",
+      "semantic_equivalents": [
+        "凸共轭与 Fenchel 对偶建模",
+        "Convex conjugate; Fenchel duality",
+        "识别支撑函数、共轭函数和内层线性/凸优化；应用 Fenchel 对偶或支撑函数化。"
+      ]
+    },
+    {
+      "tech_id": "T39",
+      "name": "次梯度、法锥与最优性条件建模",
+      "english": "Subgradient; normal cone; optimality conditions",
+      "category": "非线性/凸建模/对偶",
+      "core_use": "用 0 in subgradient + normal cone 表达非光滑凸问题最优性。",
+      "core_idea": "不可微点不能用普通梯度等式；应使用集合值包含式。",
+      "low_efficiency_symptoms": "对 abs/max 强行求导；KKT 漏掉次梯度集或法锥项。",
+      "expert_actions": "用 0∈∂f(x*)+N_C(x*)；区分 T37 算法结构与 T39 最优性表达。",
+      "model_examples": "L1 损失、投影、非光滑约束、稀疏正则、支撑函数。 模型：x* solves min_{x∈C} f(x) iff 0∈∂f(x*)+N_C(x*) for closed convex C。 N_C(x)={v | v^T(y-x)<=0, for all y∈C}。",
+      "benchmark_guidance": "naive: 错误一阶条件；expert: 非光滑最优性包含式。",
+      "semantic_equivalents": [
+        "次梯度、法锥与最优性条件建模",
+        "Subgradient; normal cone; optimality conditions",
+        "用 0∈∂f(x*)+N_C(x*)；区分 T37 算法结构与 T39 最优性表达。"
+      ]
+    },
+    {
+      "tech_id": "T40",
+      "name": "投影与近端算子建模",
+      "english": "Projection; proximal operator modeling",
+      "category": "分解/非线性",
+      "core_use": "将约束投影和正则项拆成可高效求解的近端子问题。",
+      "core_idea": "把简单投影或正则项子问题识别为专用近端/投影，比反复调用通用 QP 更高效。",
+      "low_efficiency_symptoms": "把简单投影问题当一般 QP；正则项难以求解；ADMM 子问题过重。",
+      "expert_actions": "识别闭式 prox/projection；分块实现；记录 prox 是否存在和计算复杂度。",
+      "model_examples": "ADMM、近端梯度、投影梯度、复合优化、图像处理。 模型：prox_{λg}(v)=argmin_x {g(x)+1/(2λ)||x-v||_2^2}。 L1 prox: prox_{λ||.||_1}(v)=sign(v) max(|v|-λ,0)。 Projection: P_C(v)=argmin_{x∈C} 1/2||x-v||_2^2。",
+      "benchmark_guidance": "naive: 通用求解器反复解小 QP；expert: prox/projection 专用子问题。",
+      "semantic_equivalents": [
+        "投影与近端算子建模",
+        "Projection; proximal operator modeling",
+        "识别闭式 prox/projection；分块实现；记录 prox 是否存在和计算复杂度。"
+      ]
+    },
+    {
+      "tech_id": "T41",
+      "name": "变分不等式与均衡约束建模",
+      "english": "Variational inequality; equilibrium constraints",
+      "category": "对偶/最优性",
+      "core_use": "用 VI 或 MCP 表达均衡、最优响应和互补系统。",
+      "core_idea": "均衡不一定是单个社会目标最优化；VI/MCP 能保留各主体最优响应。",
+      "low_efficiency_symptoms": "把均衡误写成单目标最小化；缺互补条件；忽略可行集。",
+      "expert_actions": "根据单调性、可行集和互补结构选择 VI/MCP/MPEC；说明求解器。",
+      "model_examples": "交通均衡、市场均衡、Nash/Stackelberg、能源市场、供应链均衡。 模型：VI: find x*∈K such that F(x*)^T(y-x*) >= 0 for all y∈K。 MCP: 0 <= x ⟂ F(x) >= 0。",
+      "benchmark_guidance": "naive: 单目标近似；expert: VI/MCP 表达并说明求解器。",
+      "semantic_equivalents": [
+        "变分不等式与均衡约束建模",
+        "Variational inequality; equilibrium constraints",
+        "根据单调性、可行集和互补结构选择 VI/MCP/MPEC；说明求解器。"
+      ]
+    },
+    {
+      "tech_id": "T42",
+      "name": "灵敏度分析与参数化建模",
+      "english": "Sensitivity; parametric optimization",
+      "category": "对偶/最优性",
+      "core_use": "显式把需求、容量、成本、权重作为参数，分析影子价格和 active set 变化。",
+      "core_idea": "参数化模型便于批量 benchmark、影子价格分析和扰动稳定性评估。",
+      "low_efficiency_symptoms": "参数硬编码；无法复现实验；不同实例不可比较。",
+      "expert_actions": "把需求、容量、成本、权重和不确定预算显式声明为参数；记录 dual/shadow price、active constraints。",
+      "model_examples": "运输、资源配置、容量扩张、价格扰动、benchmark 稳定性。 模型：LP value function v(b)=min{c^T x | A x >= b, x>=0}；若 y* 为对偶最优解，则 y* 可解释为 b 的影子价格。",
+      "benchmark_guidance": "naive: 常数写死；expert: 参数化模型+敏感性指标。",
+      "semantic_equivalents": [
+        "灵敏度分析与参数化建模",
+        "Sensitivity; parametric optimization",
+        "把需求、容量、成本、权重和不确定预算显式声明为参数；记录 dual/shadow price、active constraints。"
+      ]
+    },
+    {
+      "tech_id": "T43",
+      "name": "动态规划建模",
+      "english": "Dynamic programming; Bellman recursion",
+      "category": "分解/大规模",
+      "core_use": "多阶段决策用状态-动作-转移-价值递推表达，而非巨型 MIP。",
+      "core_idea": "多阶段决策若具有 Markov 状态和递推结构，不一定要堆成巨型 MIP。",
+      "low_efficiency_symptoms": "时序变量和约束全展开；状态转移被忽略；维度爆炸。",
+      "expert_actions": "定义状态、动作、转移和价值函数；检查状态维度和可分性。",
+      "model_examples": "库存、设备替换、最短路、批量生产、多阶段资源分配。 模型：V_t(s)=min_{a∈A(s)} {c_t(s,a)+V_{t+1}(F_t(s,a))}，V_T(s)=terminal cost。",
+      "benchmark_guidance": "naive: 全时域巨型模型；expert: Bellman recursion 或 DP + MIP 混合。",
+      "semantic_equivalents": [
+        "动态规划建模",
+        "Dynamic programming; Bellman recursion",
+        "定义状态、动作、转移和价值函数；检查状态维度和可分性。"
+      ]
+    },
+    {
+      "tech_id": "T44",
+      "name": "运输问题与网络单纯形结构",
+      "english": "Transportation; network simplex structure",
+      "category": "专用结构",
+      "core_use": "识别运输/转运结构，利用网络单纯形、总酉性或最小费用流。",
+      "core_idea": "运输/转运问题具有网络流结构，不宜强行建成一般整数规划。",
+      "low_efficiency_symptoms": "用通用 MIP 求解纯运输；未利用供需平衡和网络单纯形。",
+      "expert_actions": "识别供给、需求、运价、转运节点；用运输问题或最小费用流求解。",
+      "model_examples": "物流运输、生产配送、供应链、转运网络。 模型：min sum_{i,j} c_ij x_ij, s.t. sum_j x_ij = s_i, sum_i x_ij = d_j, x_ij>=0。",
+      "benchmark_guidance": "naive: 通用 MIP；expert: transportation/min-cost flow。",
+      "semantic_equivalents": [
+        "运输问题与网络单纯形结构",
+        "Transportation; network simplex structure",
+        "识别供给、需求、运价、转运节点；用运输问题或最小费用流求解。"
+      ]
+    },
+    {
+      "tech_id": "T45",
+      "name": "约束资格条件与 KKT 可用性判断",
+      "english": "Constraint qualification; KKT validity",
+      "category": "对偶/最优性",
+      "core_use": "判断何时可用 KKT、强对偶、法锥条件替代下层或约束优化。",
+      "core_idea": "KKT、强对偶和法锥替换下层问题都有条件；不满足时必须保留原模型或改用其他方法。",
+      "low_efficiency_symptoms": "非凸、无 Slater/CQ 不成立时盲目写 KKT；导致错误单层模型。",
+      "expert_actions": "检查凸性、Slater/LICQ/MFCQ、强对偶；必要时保留下层或使用全局方法。",
+      "model_examples": "双层规划、MPEC、约束非线性优化、凸优化对偶。 模型：Slater 条件：存在 x 使 f_i(x)<0 且 h_i(x)=0。 LICQ: active constraint gradients linearly independent。",
+      "benchmark_guidance": "naive: 乱用 KKT；expert: 给出适用条件和失败处理。",
+      "semantic_equivalents": [
+        "约束资格条件与 KKT 可用性判断",
+        "Constraint qualification; KKT validity",
+        "检查凸性、Slater/LICQ/MFCQ、强对偶；必要时保留下层或使用全局方法。"
+      ]
+    },
+    {
+      "tech_id": "T46",
+      "name": "内点法友好建模",
+      "english": "Interior-point-friendly modeling",
+      "category": "非线性/凸建模/求解器",
+      "core_use": "保持凸性、稀疏性、尺度和锥结构，利于连续凸优化求解。",
+      "core_idea": "内点法对凸性、稀疏性、尺度和锥结构敏感；建模时应保留稀疏矩阵和标准锥，而不是把结构展开成稠密非线性表达。",
+      "low_efficiency_symptoms": "把 SOCP/SDP 写成普通 NLP；矩阵稠密化；变量尺度相差巨大；KKT 系数矩阵病态。",
+      "expert_actions": "写成标准锥形式；保持 A 稀疏；统一变量尺度；避免用巨大惩罚项；选择适合内点法的 LP/QP/SOCP/SDP 表达。",
+      "model_examples": "连续凸优化、SOCP、SDP、组合锥优化、鲁棒投资组合、稀疏二次约束。 模型：min c^T x, s.t. A x=b, x∈K，其中 K=R_+^n × Q_1 × ... × S_+^m。 SOCP: ||A_i x+b_i||_2 <= c_i^T x+d_i。",
+      "benchmark_guidance": "naive: 黑箱 NLP/稠密模型；expert: sparse conic/canonical form；指标为 IPM iterations、KKT factorization time、numerical warnings。",
+      "semantic_equivalents": [
+        "内点法友好建模",
+        "Interior-point-friendly modeling",
+        "写成标准锥形式；保持 A 稀疏；统一变量尺度；避免用巨大惩罚项；选择适合内点法的 LP/QP/SOCP/SDP 表达。"
+      ]
+    },
+    {
+      "tech_id": "T47",
+      "name": "矩阵变量与低秩结构建模",
+      "english": "Matrix variable and low-rank structure modeling",
+      "category": "专用结构/非线性",
+      "core_use": "识别矩阵变量、低秩、稀疏+低秩、核范数、半正定或矩阵分解结构。",
+      "core_idea": "当决策变量本身是矩阵时，应保留矩阵结构、低秩/半正定/核范数等信息；不要盲目向量化。",
+      "low_efficiency_symptoms": "把矩阵变量展平成长向量，导致结构丢失；rank 约束直接非凸难解；PSD 结构未识别。",
+      "expert_actions": "识别矩阵变量 X、低秩约束 rank(X)<=r、核范数松弛、PSD 约束或低秩分解 X=U V^T；根据凸性和规模选择 SDP/核范数/非凸分解。",
+      "model_examples": "矩阵补全、鲁棒 PCA、低秩矩阵恢复、协方差估计、半正定规划。 模型：Matrix completion: min_X 1/2||P_Ω(X-M)||_F^2 + λ rank(X) 或凸松弛 min_X 1/2||P_Ω(X-M)||_F^2 + λ||X||_*。 Low-rank factorization: X=U V^T, U∈R^{m×r}, V∈R^{n×r}。 Robust PCA: min_{L,S} ||L||_* + λ||S||_1, s.t. D=L+S。",
+      "benchmark_guidance": "naive: 向量化/黑箱 rank；expert: matrix structured model、nuclear norm 或 factorized low-rank；比较变量规模、内存和求解时间。",
+      "semantic_equivalents": [
+        "矩阵变量与低秩结构建模",
+        "Matrix variable and low-rank structure modeling",
+        "识别矩阵变量 X、低秩约束 rank(X)<=r、核范数松弛、PSD 约束或低秩分解 X=U V^T；根据凸性和规模选择 SDP/核范数/非凸分解。"
+      ]
+    },
+    {
+      "tech_id": "T48",
+      "name": "覆盖/团/子环/容量等典型割",
+      "english": "Cover/clique/subtour/capacity cuts",
+      "category": "松弛强化",
+      "core_use": "T07 的常见子类：cover cuts、clique cuts、subtour elimination、capacity cuts。",
+      "core_idea": "不同问题的“有效不等式”名称不同，应给出可检测标签。",
+      "low_efficiency_symptoms": "只有基础容量/度约束；出现子环、冲突分数解或容量松弛。",
+      "expert_actions": "按结构选择 cover、clique、subtour elimination、capacity cuts；大规模时 lazy/separation。",
+      "model_examples": "背包、图着色、TSP/VRP、CVRP、网络设计。 模型：SEC: sum_{i in S, j in S} x_ij <= |S|-1。 Clique: sum_{i in C} x_i <= 1。 CVRP capacity cut: x(δ(S)) >= 2 r(S)。",
+      "benchmark_guidance": "naive: 度约束或基础容量；expert: SEC/capacity/lazy cuts。",
+      "semantic_equivalents": [
+        "覆盖/团/子环/容量等典型割",
+        "Cover/clique/subtour/capacity cuts",
+        "按结构选择 cover、clique、subtour elimination、capacity cuts；大规模时 lazy/separation。"
+      ]
+    },
+    {
+      "tech_id": "T49",
+      "name": "连接约束与激活强化",
+      "english": "Linking constraints; activation strengthening",
+      "category": "松弛强化",
+      "core_use": "连接分配变量和开关变量，防止小数开关支撑大分配。",
+      "core_idea": "它常与 T05/T06 交叉，但主要评价的是松弛强化效果。",
+      "low_efficiency_symptoms": "只写容量激活，缺少 x_ij <= y_j 等直接连接。",
+      "expert_actions": "加入 linking、disaggregated linking、容量割；分析 fractional opening。",
+      "model_examples": "设施选址、固定费用生产、固定费用流、开关资源。 模型：Facility: sum_i d_i x_ij <= C_j y_j, x_ij <= y_j. Fixed-charge production: 0 <= q_t <= U_t y_t.",
+      "benchmark_guidance": "naive: 只用容量激活；expert: linking + capacity cuts；指标为 fractional opening/root gap。",
+      "semantic_equivalents": [
+        "连接约束与激活强化",
+        "Linking constraints; activation strengthening",
+        "加入 linking、disaggregated linking、容量割；分析 fractional opening。"
+      ]
+    },
+    {
+      "tech_id": "T50",
+      "name": "张量变量与低秩结构建模",
+      "english": "Tensor variable and low-rank structure modeling",
+      "category": "专用结构/非线性",
+      "core_use": "识别张量变量、CP/Tucker/张量环等低秩结构，避免盲目向量化和高维稠密建模。",
+      "core_idea": "张量数据应保留多模态结构；低秩张量建模通过 CP/Tucker/张量环等分解减少参数并保持结构信息。",
+      "low_efficiency_symptoms": "把张量直接展平成向量或大矩阵；忽略多模态低秩；变量维度爆炸；稠密核范数/SDP 不可扩展。",
+      "expert_actions": "识别张量 X∈R^{I1×...×IN}；根据数据结构选择 CP、Tucker、TT/TR 或张量展开核范数；必要时按模展开、分块或随机化。",
+      "model_examples": "张量补全、推荐系统、多维时空数据、图像/视频恢复、遥感和医学影像。 模型：CP rank-R: X ≈ sum_{r=1}^R a_r^{(1)} ∘ a_r^{(2)} ∘ ... ∘ a_r^{(N)}。 Tucker: X ≈ G ×_1 U^{(1)} ×_2 U^{(2)} ... ×_N U^{(N)}。 Tensor completion: min_X 1/2||P_Ω(X-M)||_F^2 + λ sum_{n=1}^N α_n ||X_(n)||_*，其中 X_(n) 为 mode-n unfolding。",
+      "benchmark_guidance": "naive: 向量化/枚举所有元素；expert: CP/Tucker/展开核范数/低秩分解；比较参数量、内存、重构误差和求解时间。",
+      "semantic_equivalents": [
+        "张量变量与低秩结构建模",
+        "Tensor variable and low-rank structure modeling",
+        "识别张量 X∈R^{I1×...×IN}；根据数据结构选择 CP、Tucker、TT/TR 或张量展开核范数；必要时按模展开、分块或随机化。"
+      ]
+    }
+  ]
+}

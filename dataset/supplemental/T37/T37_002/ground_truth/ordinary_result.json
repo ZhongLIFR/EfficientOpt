@@ -1,0 +1,15 @@
+{
+  "problem_id": "T37_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 6223.189740572279,
+  "solver_runtime_seconds": 0.179122708,
+  "code_run_time_seconds": 0.179122708,
+  "work_units": 520000,
+  "num_variables": 6500,
+  "num_constraints": 0,
+  "num_nonzeros": 6500,
+  "iterations": 80,
+  "method": "generic_composite_convex_search",
+  "validation_source": "validation.json"
+}

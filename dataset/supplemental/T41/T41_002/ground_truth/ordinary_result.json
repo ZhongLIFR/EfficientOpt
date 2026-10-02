@@ -1,0 +1,15 @@
+{
+  "problem_id": "T41_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -129544.74829773433,
+  "solver_runtime_seconds": 0.117516625,
+  "code_run_time_seconds": 0.117516625,
+  "work_units": 5832000,
+  "num_variables": 180,
+  "num_constraints": 180,
+  "num_nonzeros": 32400,
+  "iterations": 1,
+  "method": "dense_affine_vi_linear_system",
+  "validation_source": "validation.json"
+}

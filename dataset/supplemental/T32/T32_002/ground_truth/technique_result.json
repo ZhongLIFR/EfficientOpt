@@ -1,0 +1,15 @@
+{
+  "problem_id": "T32_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 142.0,
+  "solver_runtime_seconds": 0.00031889998354017735,
+  "code_run_time_seconds": 0.00031869998201727867,
+  "work_units": 48,
+  "num_variables": 18,
+  "num_constraints": 12,
+  "num_nonzeros": 24,
+  "iterations": 6,
+  "method": "conflict_log_component_diagnosis",
+  "validation_source": "validation.json"
+}

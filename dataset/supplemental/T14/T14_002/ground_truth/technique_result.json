@@ -1,0 +1,15 @@
+{
+  "problem_id": "T14_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 3.5093519055758002,
+  "solver_runtime_seconds": 0.020851708000000024,
+  "code_run_time_seconds": 0.020851708000000024,
+  "work_units": 50220,
+  "num_variables": 3240,
+  "num_constraints": 1638,
+  "num_nonzeros": 3240,
+  "iterations": 31,
+  "method": "exchange_admm_projection",
+  "validation_source": "validation.json"
+}

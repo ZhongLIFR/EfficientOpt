@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_003",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 164.0,
+  "solver_runtime_seconds": 0.3963878999929875,
+  "code_run_time_seconds": 0.3963872999884188,
+  "work_units": 3125000,
+  "num_variables": 40,
+  "num_constraints": 8,
+  "num_nonzeros": 40,
+  "iterations": 390625,
+  "method": "enumerate_one_choice_assignments",
+  "validation_source": "validation.json"
+}

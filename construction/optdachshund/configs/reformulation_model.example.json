@@ -1,0 +1,18 @@
+{
+  "default": {
+    "provider": "openai_compatible",
+    "base_url_env": "OPTDACHSHUND_REFORMULATION_BASE_URL",
+    "api_key_env": "OPTDACHSHUND_REFORMULATION_API_KEY",
+    "model": "your-model-name",
+    "temperature": 0.2,
+    "max_tokens": 4096
+  },
+  "agents": {
+    "technique_matcher": {"name": "technique_matcher", "model": "your-model-name"},
+    "reformulation_designer": {"name": "reformulation_designer", "model": "your-model-name"},
+    "quality_auditor": {"name": "quality_auditor", "model": "your-model-name"},
+    "repair": {"name": "repair", "model": "your-model-name"},
+    "reference_implementation": {"name": "reference_implementation", "model": "your-model-name"},
+    "reference_auditor": {"name": "reference_auditor", "model": "your-model-name"}
+  }
+}

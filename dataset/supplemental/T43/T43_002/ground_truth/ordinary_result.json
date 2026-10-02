@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 180.1,
+  "solver_runtime_seconds": 4.543578899931163,
+  "code_run_time_seconds": 4.543578499928117,
+  "work_units": 17399785,
+  "num_variables": 10,
+  "num_constraints": 10,
+  "num_nonzeros": 40,
+  "iterations": 1048576,
+  "method": "enumerate_inventory_plans",
+  "validation_source": "validation.json"
+}

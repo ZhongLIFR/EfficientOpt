@@ -1,0 +1,15 @@
+{
+  "problem_id": "T32_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 16.0,
+  "solver_runtime_seconds": 0.0003253000322729349,
+  "code_run_time_seconds": 0.00032510003075003624,
+  "work_units": 96,
+  "num_variables": 15,
+  "num_constraints": 3,
+  "num_nonzeros": 15,
+  "iterations": 3,
+  "method": "log_connected_component_decomposition",
+  "validation_source": "validation.json"
+}

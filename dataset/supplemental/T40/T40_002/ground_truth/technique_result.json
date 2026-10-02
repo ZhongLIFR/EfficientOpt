@@ -1,0 +1,15 @@
+{
+  "problem_id": "T40_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 3586.2548934758915,
+  "solver_runtime_seconds": 0.0014123330000000017,
+  "code_run_time_seconds": 0.0014123330000000017,
+  "work_units": 120400,
+  "num_variables": 8600,
+  "num_constraints": 8601,
+  "num_nonzeros": 17200,
+  "iterations": 1,
+  "method": "simplex_projection_sort_threshold",
+  "validation_source": "validation.json"
+}

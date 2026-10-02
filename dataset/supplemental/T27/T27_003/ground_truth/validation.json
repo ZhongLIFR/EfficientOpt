@@ -1,0 +1,107 @@
+{
+  "problem_id": "T27_003",
+  "target_technique": "T27",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 16274436.0,
+        "lex_tuple": [
+          16,
+          274,
+          436
+        ],
+        "solution_checksum": 36.0,
+        "wall_seconds": 0.22295816599999999,
+        "runtime": 0.22295816599999999,
+        "work": 3125000,
+        "iterations": 8,
+        "variables": 8,
+        "constraints": 24,
+        "nonzeros": 40,
+        "method": "cartesian_product_weighted_sum_search"
+      },
+      "technique": {
+        "objective": 16274436.0,
+        "lex_tuple": [
+          16,
+          274,
+          436
+        ],
+        "solution_checksum": 36.0,
+        "wall_seconds": 1.0124999999999718e-05,
+        "runtime": 1.0124999999999718e-05,
+        "work": 40,
+        "iterations": 8,
+        "variables": 8,
+        "constraints": 24,
+        "nonzeros": 40,
+        "method": "staged_lexicographic_filtering"
+      },
+      "reference_objective": 16274436.0,
+      "runtime_speedup_percent": 99.99545878934079,
+      "work_reduction_percent": 99.99872,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "same_lex_tuple": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 16274436.0,
+        "lex_tuple": [
+          16,
+          274,
+          436
+        ],
+        "solution_checksum": 36.0,
+        "wall_seconds": 0.2208635,
+        "runtime": 0.2208635,
+        "work": 3125000,
+        "iterations": 8,
+        "variables": 8,
+        "constraints": 24,
+        "nonzeros": 40,
+        "method": "cartesian_product_weighted_sum_search"
+      },
+      "technique": {
+        "objective": 16274436.0,
+        "lex_tuple": [
+          16,
+          274,
+          436
+        ],
+        "solution_checksum": 36.0,
+        "wall_seconds": 9.709000000024393e-06,
+        "runtime": 9.709000000024393e-06,
+        "work": 40,
+        "iterations": 8,
+        "variables": 8,
+        "constraints": 24,
+        "nonzeros": 40,
+        "method": "staged_lexicographic_filtering"
+      },
+      "reference_objective": 16274436.0,
+      "runtime_speedup_percent": 99.99560407219843,
+      "work_reduction_percent": 99.99872,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "same_lex_tuple": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99545878934079,
+  "minimum_work_reduction_percent": 99.99872,
+  "pass": true
+}

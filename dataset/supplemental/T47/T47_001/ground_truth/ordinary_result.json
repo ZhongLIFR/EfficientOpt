@@ -1,0 +1,15 @@
+{
+  "problem_id": "T47_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1.5969142331363841,
+  "solver_runtime_seconds": 0.632550875,
+  "code_run_time_seconds": 0.632550875,
+  "work_units": 12364800,
+  "num_variables": 48316,
+  "num_constraints": 48300,
+  "num_nonzeros": 772800,
+  "iterations": 1,
+  "method": "dense_entrywise_design_with_matrix_equalities",
+  "validation_source": "validation.json"
+}

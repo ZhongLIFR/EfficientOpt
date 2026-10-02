@@ -1,0 +1,109 @@
+{
+  "problem_id": "T28_003",
+  "target_technique": "T28",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 120851190.0,
+        "critical_shortfall": 339974,
+        "standard_shortfall": 1331906,
+        "total_shortfall": 1671880,
+        "violated_rows": 2880,
+        "wall_seconds": 0.151179791,
+        "runtime": 0.151179791,
+        "work": 1699390,
+        "iterations": 1699390,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "feasibility_budget_search"
+      },
+      "technique": {
+        "objective": 120851190.0,
+        "critical_shortfall": 339974,
+        "standard_shortfall": 1331906,
+        "total_shortfall": 1671880,
+        "violated_rows": 2880,
+        "wall_seconds": 0.00031174999999999953,
+        "runtime": 0.00031174999999999953,
+        "work": 2880,
+        "iterations": 1,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "explicit_class_weighted_shortfall_slack",
+        "slack_count": 2880,
+        "critical_penalty": 140.0,
+        "standard_penalty": 55.0
+      },
+      "reference_objective": 120851190.0,
+      "reference_total_shortfall": 1671880,
+      "runtime_speedup_percent": 99.7937885758818,
+      "work_reduction_percent": 99.83052742454646,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_critical_shortfall": true,
+        "same_standard_shortfall": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "slack_is_reported": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 120851190.0,
+        "critical_shortfall": 339974,
+        "standard_shortfall": 1331906,
+        "total_shortfall": 1671880,
+        "violated_rows": 2880,
+        "wall_seconds": 0.15856245900000002,
+        "runtime": 0.15856245900000002,
+        "work": 1699390,
+        "iterations": 1699390,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "feasibility_budget_search"
+      },
+      "technique": {
+        "objective": 120851190.0,
+        "critical_shortfall": 339974,
+        "standard_shortfall": 1331906,
+        "total_shortfall": 1671880,
+        "violated_rows": 2880,
+        "wall_seconds": 0.0003159169999999989,
+        "runtime": 0.0003159169999999989,
+        "work": 2880,
+        "iterations": 1,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "explicit_class_weighted_shortfall_slack",
+        "slack_count": 2880,
+        "critical_penalty": 140.0,
+        "standard_penalty": 55.0
+      },
+      "reference_objective": 120851190.0,
+      "reference_total_shortfall": 1671880,
+      "runtime_speedup_percent": 99.80076179318081,
+      "work_reduction_percent": 99.83052742454646,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_critical_shortfall": true,
+        "same_standard_shortfall": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "slack_is_reported": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.7937885758818,
+  "minimum_work_reduction_percent": 99.83052742454646,
+  "pass": true
+}

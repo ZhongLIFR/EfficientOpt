@@ -1,0 +1,15 @@
+{
+  "problem_id": "T42_003",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 3396.9325256778966,
+  "solver_runtime_seconds": 0.023144291,
+  "code_run_time_seconds": 0.023144291,
+  "work_units": 8959730,
+  "num_variables": 5330,
+  "num_constraints": 130,
+  "num_nonzeros": 15600,
+  "iterations": 130,
+  "method": "independent_dense_kkt_for_each_parameter",
+  "validation_source": "validation.json"
+}

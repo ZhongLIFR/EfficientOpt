@@ -1,0 +1,99 @@
+{
+  "problem_id": "T47_002",
+  "target_technique": "T47",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 15209.51569288225,
+        "max_row_error": 1.7053025658242404e-13,
+        "max_column_error": 2.5579538487363607e-13,
+        "solution_checksum": 139.5853630498019,
+        "wall_seconds": 0.171801583,
+        "runtime": 0.171801583,
+        "work": 699200,
+        "iterations": 1,
+        "variables": 699200,
+        "constraints": 1680,
+        "nonzeros": 1398400,
+        "method": "dense_flattened_matrix_projection"
+      },
+      "technique": {
+        "objective": 15209.515692881798,
+        "max_row_error": 0.0,
+        "max_column_error": 0.0,
+        "solution_checksum": 0.05314803336946913,
+        "wall_seconds": 7.87079999999829e-05,
+        "runtime": 7.87079999999829e-05,
+        "work": 1680,
+        "iterations": 1,
+        "variables": 1680,
+        "constraints": 1680,
+        "nonzeros": 1680,
+        "method": "additive_rank_two_marginal_projection",
+        "structure_preserved": "matrix row/column sums represented by two low-rank vectors"
+      },
+      "reference_objective": 15209.515692881798,
+      "runtime_speedup_percent": 99.9541866852298,
+      "work_reduction_percent": 99.75972540045767,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_row_column_feasible": true,
+        "technique_row_column_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 15209.51569288225,
+        "max_row_error": 1.7053025658242404e-13,
+        "max_column_error": 2.5579538487363607e-13,
+        "solution_checksum": 139.5853630498019,
+        "wall_seconds": 0.168411792,
+        "runtime": 0.168411792,
+        "work": 699200,
+        "iterations": 1,
+        "variables": 699200,
+        "constraints": 1680,
+        "nonzeros": 1398400,
+        "method": "dense_flattened_matrix_projection"
+      },
+      "technique": {
+        "objective": 15209.515692881798,
+        "max_row_error": 0.0,
+        "max_column_error": 0.0,
+        "solution_checksum": 0.05314803336946913,
+        "wall_seconds": 7.862499999999883e-05,
+        "runtime": 7.862499999999883e-05,
+        "work": 1680,
+        "iterations": 1,
+        "variables": 1680,
+        "constraints": 1680,
+        "nonzeros": 1680,
+        "method": "additive_rank_two_marginal_projection",
+        "structure_preserved": "matrix row/column sums represented by two low-rank vectors"
+      },
+      "reference_objective": 15209.515692881798,
+      "runtime_speedup_percent": 99.95331383921145,
+      "work_reduction_percent": 99.75972540045767,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_row_column_feasible": true,
+        "technique_row_column_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.95331383921145,
+  "minimum_work_reduction_percent": 99.75972540045767,
+  "pass": true
+}

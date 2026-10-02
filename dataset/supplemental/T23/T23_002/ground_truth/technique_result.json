@@ -1,0 +1,15 @@
+{
+  "problem_id": "T23_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1149.2113846153845,
+  "solver_runtime_seconds": 0.0036794579999999133,
+  "code_run_time_seconds": 0.0036794579999999133,
+  "work_units": 200200,
+  "num_variables": 14,
+  "num_constraints": 14,
+  "num_nonzeros": 18200,
+  "iterations": 14,
+  "method": "scenario_decomposition_quantile_rule",
+  "validation_source": "validation.json"
+}

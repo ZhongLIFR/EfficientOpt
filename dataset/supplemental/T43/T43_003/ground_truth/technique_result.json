@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 640.0,
+  "solver_runtime_seconds": 0.0004813999403268099,
+  "code_run_time_seconds": 0.00048109993804246187,
+  "work_units": 2074,
+  "num_variables": 106,
+  "num_constraints": 105,
+  "num_nonzeros": 2310,
+  "iterations": 22,
+  "method": "zero_one_knapsack_dynamic_programming",
+  "validation_source": "validation.json"
+}

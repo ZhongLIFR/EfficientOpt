@@ -1,0 +1,81 @@
+{
+  "problem_id": "T29_002",
+  "target_technique": "T29",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 11877700.95,
+        "wall_seconds": 0.09872720006387681,
+        "runtime": 0.09872830007225275,
+        "work": 242268,
+        "iterations": 6000,
+        "variables": 480000,
+        "constraints": 6000,
+        "nonzeros": 480000,
+        "method": "scan_all_piecewise_segments"
+      },
+      "technique": {
+        "objective": 11877700.95,
+        "wall_seconds": 0.09266290010418743,
+        "runtime": 0.09266320010647178,
+        "work": 38408,
+        "iterations": 6000,
+        "variables": 480000,
+        "constraints": 6000,
+        "nonzeros": 480000,
+        "method": "ordered_piecewise_segment_lookup"
+      },
+      "reference_objective": 11877700.95,
+      "runtime_speedup_percent": 6.143223332461235,
+      "work_reduction_percent": 84.1464824079119,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 11877700.95,
+        "wall_seconds": 0.09922229999210685,
+        "runtime": 0.0992225999943912,
+        "work": 242268,
+        "iterations": 6000,
+        "variables": 480000,
+        "constraints": 6000,
+        "nonzeros": 480000,
+        "method": "scan_all_piecewise_segments"
+      },
+      "technique": {
+        "objective": 11877700.95,
+        "wall_seconds": 0.09255290008150041,
+        "runtime": 0.09255330008454621,
+        "work": 38408,
+        "iterations": 6000,
+        "variables": 480000,
+        "constraints": 6000,
+        "nonzeros": 480000,
+        "method": "ordered_piecewise_segment_lookup"
+      },
+      "reference_objective": 11877700.95,
+      "runtime_speedup_percent": 6.721553265306485,
+      "work_reduction_percent": 84.1464824079119,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 6.143223332461235,
+  "minimum_work_reduction_percent": 84.1464824079119,
+  "pass": true
+}

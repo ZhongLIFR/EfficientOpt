@@ -1,0 +1,15 @@
+{
+  "problem_id": "T42_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 4870.466240996045,
+  "solver_runtime_seconds": 0.0005064580000000013,
+  "code_run_time_seconds": 0.0005064580000000013,
+  "work_units": 5400,
+  "num_variables": 165,
+  "num_constraints": 120,
+  "num_nonzeros": 165,
+  "iterations": 120,
+  "method": "sensitivity_formula_reused_across_parameters",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,9 @@
+{
+  "problem_id": "T41_001",
+  "technique_id": "T41",
+  "main_statistics_included": false,
+  "data_partition": "supplemental_non_gurobi",
+  "validation_file": "validation.json",
+  "input_path": "../instance.json",
+  "split": "supplemental"
+}

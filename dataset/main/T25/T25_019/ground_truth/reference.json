@@ -1,0 +1,6 @@
+{
+  "objective": 52.0,
+  "relative_tolerance": 1e-06,
+  "absolute_tolerance": 1e-06,
+  "instance_sha256": "ecb6111178681b4cd89796324e33da25ad34e91ae57831aac61c0465ca348833"
+}

@@ -1,0 +1,81 @@
+{
+  "problem_id": "T46_001",
+  "target_technique": "T46",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 322.8031138646698,
+        "wall_seconds": 0.06822012499999999,
+        "runtime": 0.06822012499999999,
+        "work": 531441000,
+        "iterations": 1,
+        "variables": 810,
+        "constraints": 90,
+        "nonzeros": 2160,
+        "method": "dense_global_kkt"
+      },
+      "technique": {
+        "objective": 322.80311386466997,
+        "wall_seconds": 0.00013475000000000292,
+        "runtime": 0.00013475000000000292,
+        "work": 65610,
+        "iterations": 90,
+        "variables": 810,
+        "constraints": 90,
+        "nonzeros": 2160,
+        "method": "block_diagonal_kkt",
+        "structure_preserved": "independent equality-constrained diagonal QP blocks"
+      },
+      "reference_objective": 322.80311386466997,
+      "runtime_speedup_percent": 99.80247764131185,
+      "work_reduction_percent": 99.98765432098766,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 322.8031138646698,
+        "wall_seconds": 0.07106266600000001,
+        "runtime": 0.07106266600000001,
+        "work": 531441000,
+        "iterations": 1,
+        "variables": 810,
+        "constraints": 90,
+        "nonzeros": 2160,
+        "method": "dense_global_kkt"
+      },
+      "technique": {
+        "objective": 322.80311386466997,
+        "wall_seconds": 0.0001279160000000057,
+        "runtime": 0.0001279160000000057,
+        "work": 65610,
+        "iterations": 90,
+        "variables": 810,
+        "constraints": 90,
+        "nonzeros": 2160,
+        "method": "block_diagonal_kkt",
+        "structure_preserved": "independent equality-constrained diagonal QP blocks"
+      },
+      "reference_objective": 322.80311386466997,
+      "runtime_speedup_percent": 99.81999549524359,
+      "work_reduction_percent": 99.98765432098766,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.80247764131185,
+  "minimum_work_reduction_percent": 99.98765432098766,
+  "pass": true
+}

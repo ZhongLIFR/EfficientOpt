@@ -1,0 +1,15 @@
+{
+  "problem_id": "T26_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -351.57015,
+  "solver_runtime_seconds": 0.08047729199999999,
+  "code_run_time_seconds": 0.08047729199999999,
+  "work_units": 590490,
+  "num_variables": 10,
+  "num_constraints": 20,
+  "num_nonzeros": 20,
+  "iterations": 59049,
+  "method": "enumerate_complementarity_active_statuses",
+  "validation_source": "validation.json"
+}

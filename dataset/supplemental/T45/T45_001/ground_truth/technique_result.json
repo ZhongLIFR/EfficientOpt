@@ -1,0 +1,15 @@
+{
+  "problem_id": "T45_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 36325.214532871825,
+  "solver_runtime_seconds": 0.0012796250000000065,
+  "code_run_time_seconds": 0.0012796250000000065,
+  "work_units": 9500,
+  "num_variables": 0,
+  "num_constraints": 0,
+  "num_nonzeros": 0,
+  "iterations": 1,
+  "method": "constraint_qualification_audit_reduce_zero_gradient_constraints",
+  "validation_source": "validation.json"
+}

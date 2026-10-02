@@ -1,0 +1,15 @@
+{
+  "problem_id": "T50_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 274803.0245079076,
+  "solver_runtime_seconds": 0.00040070799999991635,
+  "code_run_time_seconds": 0.00040070799999991635,
+  "work_units": 5456,
+  "num_variables": 1360,
+  "num_constraints": 0,
+  "num_nonzeros": 1360,
+  "iterations": 1,
+  "method": "cp_factor_gram_shrinkage",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 4.0,
+  "solver_runtime_seconds": 5.1900045946240425e-05,
+  "code_run_time_seconds": 5.1600043661892414e-05,
+  "work_units": 100,
+  "num_variables": 100,
+  "num_constraints": 100,
+  "num_nonzeros": 300,
+  "iterations": 100,
+  "method": "sequence_alignment_dynamic_programming",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T31_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 7.0,
+  "solver_runtime_seconds": 3.090000245720148e-05,
+  "code_run_time_seconds": 3.060000017285347e-05,
+  "work_units": 100,
+  "num_variables": 20,
+  "num_constraints": 1,
+  "num_nonzeros": 20,
+  "iterations": 20,
+  "method": "earliest_finish_interval_matching",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T28_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 199222125.0,
+  "solver_runtime_seconds": 0.0010331249999999959,
+  "code_run_time_seconds": 0.0010331249999999959,
+  "work_units": 2880,
+  "num_variables": 2880,
+  "num_constraints": 2880,
+  "num_nonzeros": 2880,
+  "iterations": 1,
+  "method": "explicit_shortage_slack_penalty",
+  "validation_source": "validation.json"
+}

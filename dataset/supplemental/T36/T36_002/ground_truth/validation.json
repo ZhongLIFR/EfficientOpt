@@ -1,0 +1,85 @@
+{
+  "problem_id": "T36_002",
+  "target_technique": "T36",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": -20652.496957756925,
+        "solution_checksum": 18644786.593172513,
+        "wall_seconds": 0.07011916600000001,
+        "runtime": 0.07011916600000001,
+        "work": 416000,
+        "iterations": 80,
+        "variables": 5200,
+        "constraints": 10400,
+        "nonzeros": 10400,
+        "method": "black_box_univariate_convex_search"
+      },
+      "technique": {
+        "objective": -20652.496957756925,
+        "solution_checksum": 18644786.467464056,
+        "wall_seconds": 0.001495125,
+        "runtime": 0.001495125,
+        "work": 5200,
+        "iterations": 1,
+        "variables": 5200,
+        "constraints": 10400,
+        "nonzeros": 10400,
+        "method": "dcp_stationarity_exp_cone_closed_form"
+      },
+      "reference_objective": -20652.496957756925,
+      "runtime_speedup_percent": 97.86773704638757,
+      "work_reduction_percent": 98.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": -20652.496957756925,
+        "solution_checksum": 18644786.593172513,
+        "wall_seconds": 0.073165125,
+        "runtime": 0.073165125,
+        "work": 416000,
+        "iterations": 80,
+        "variables": 5200,
+        "constraints": 10400,
+        "nonzeros": 10400,
+        "method": "black_box_univariate_convex_search"
+      },
+      "technique": {
+        "objective": -20652.496957756925,
+        "solution_checksum": 18644786.467464056,
+        "wall_seconds": 0.0014513339999999986,
+        "runtime": 0.0014513339999999986,
+        "work": 5200,
+        "iterations": 1,
+        "variables": 5200,
+        "constraints": 10400,
+        "nonzeros": 10400,
+        "method": "dcp_stationarity_exp_cone_closed_form"
+      },
+      "reference_objective": -20652.496957756925,
+      "runtime_speedup_percent": 98.01635820344734,
+      "work_reduction_percent": 98.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 97.86773704638757,
+  "minimum_work_reduction_percent": 98.75,
+  "pass": true
+}

@@ -1,0 +1,81 @@
+{
+  "problem_id": "T33_002",
+  "target_technique": "T33",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1.857925203976527e-26,
+        "wall_seconds": 0.20912190002854913,
+        "runtime": 0.20912220003083348,
+        "work": 302400,
+        "iterations": 140,
+        "variables": 2520,
+        "constraints": 18,
+        "nonzeros": 2160,
+        "method": "reparse_raw_sparse_terms_per_candidate"
+      },
+      "technique": {
+        "objective": 4.8467614016778965e-27,
+        "wall_seconds": 0.02543769998010248,
+        "runtime": 0.025437899981625378,
+        "work": 4680,
+        "iterations": 140,
+        "variables": 2520,
+        "constraints": 18,
+        "nonzeros": 180,
+        "method": "canonical_sparse_coefficient_aggregation"
+      },
+      "reference_objective": 4.8467614016778965e-27,
+      "runtime_speedup_percent": 87.83586822543242,
+      "work_reduction_percent": 98.45238095238095,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1.857925203976527e-26,
+        "wall_seconds": 0.21394649997819215,
+        "runtime": 0.2139467999804765,
+        "work": 302400,
+        "iterations": 140,
+        "variables": 2520,
+        "constraints": 18,
+        "nonzeros": 2160,
+        "method": "reparse_raw_sparse_terms_per_candidate"
+      },
+      "technique": {
+        "objective": 4.8467614016778965e-27,
+        "wall_seconds": 0.02667449996806681,
+        "runtime": 0.02667469996958971,
+        "work": 4680,
+        "iterations": 140,
+        "variables": 2520,
+        "constraints": 18,
+        "nonzeros": 180,
+        "method": "canonical_sparse_coefficient_aggregation"
+      },
+      "reference_objective": 4.8467614016778965e-27,
+      "runtime_speedup_percent": 87.53208742920022,
+      "work_reduction_percent": 98.45238095238095,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 87.53208742920022,
+  "minimum_work_reduction_percent": 98.45238095238095,
+  "pass": true
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T28_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 120851190.0,
+  "solver_runtime_seconds": 0.00031174999999999953,
+  "code_run_time_seconds": 0.00031174999999999953,
+  "work_units": 2880,
+  "num_variables": 2880,
+  "num_constraints": 2880,
+  "num_nonzeros": 2880,
+  "iterations": 1,
+  "method": "explicit_class_weighted_shortfall_slack",
+  "validation_source": "validation.json"
+}

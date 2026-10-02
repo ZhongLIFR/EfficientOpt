@@ -1,0 +1,81 @@
+{
+  "problem_id": "T33_003",
+  "target_technique": "T33",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 23.0,
+        "wall_seconds": 0.0018694999162107706,
+        "runtime": 0.0018699999200180173,
+        "work": 77056,
+        "iterations": 301,
+        "variables": 301,
+        "constraints": 32,
+        "nonzeros": 256,
+        "method": "raw_mixed_sense_branch_evaluation"
+      },
+      "technique": {
+        "objective": 23.0,
+        "wall_seconds": 0.0018840000266209245,
+        "runtime": 0.0018842000281438231,
+        "work": 12898,
+        "iterations": 301,
+        "variables": 301,
+        "constraints": 32,
+        "nonzeros": 256,
+        "method": "canonical_standard_leq_transformation"
+      },
+      "reference_objective": 23.0,
+      "runtime_speedup_percent": -0.7593641033775572,
+      "work_reduction_percent": 83.26152408637874,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 23.0,
+        "wall_seconds": 0.0015298000071197748,
+        "runtime": 0.0015300000086426735,
+        "work": 77056,
+        "iterations": 301,
+        "variables": 301,
+        "constraints": 32,
+        "nonzeros": 256,
+        "method": "raw_mixed_sense_branch_evaluation"
+      },
+      "technique": {
+        "objective": 23.0,
+        "wall_seconds": 0.0015918000135570765,
+        "runtime": 0.0015920000150799751,
+        "work": 12898,
+        "iterations": 301,
+        "variables": 301,
+        "constraints": 32,
+        "nonzeros": 256,
+        "method": "canonical_standard_leq_transformation"
+      },
+      "reference_objective": 23.0,
+      "runtime_speedup_percent": -4.052287979547426,
+      "work_reduction_percent": 83.26152408637874,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": -4.052287979547426,
+  "minimum_work_reduction_percent": 83.26152408637874,
+  "pass": true
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T36_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -22218.784461111427,
+  "solver_runtime_seconds": 0.077369958,
+  "code_run_time_seconds": 0.077369958,
+  "work_units": 448000,
+  "num_variables": 5600,
+  "num_constraints": 11200,
+  "num_nonzeros": 11200,
+  "iterations": 80,
+  "method": "black_box_univariate_convex_search",
+  "validation_source": "validation.json"
+}

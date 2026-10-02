@@ -1,0 +1,15 @@
+{
+  "problem_id": "T46_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1929.8111927710786,
+  "solver_runtime_seconds": 0.007696209000000009,
+  "code_run_time_seconds": 0.007696209000000009,
+  "work_units": 81000,
+  "num_variables": 900,
+  "num_constraints": 1,
+  "num_nonzeros": 900,
+  "iterations": 90,
+  "method": "diagonal_cone_dual_search",
+  "validation_source": "validation.json"
+}

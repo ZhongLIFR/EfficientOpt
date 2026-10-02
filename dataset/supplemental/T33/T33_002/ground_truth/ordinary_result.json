@@ -1,0 +1,15 @@
+{
+  "problem_id": "T33_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1.857925203976527e-26,
+  "solver_runtime_seconds": 0.20912220003083348,
+  "code_run_time_seconds": 0.20912190002854913,
+  "work_units": 302400,
+  "num_variables": 2520,
+  "num_constraints": 18,
+  "num_nonzeros": 2160,
+  "iterations": 140,
+  "method": "reparse_raw_sparse_terms_per_candidate",
+  "validation_source": "validation.json"
+}

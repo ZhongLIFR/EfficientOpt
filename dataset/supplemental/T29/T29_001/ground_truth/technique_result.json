@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 408.0,
+  "solver_runtime_seconds": 2.0000035874545574e-05,
+  "code_run_time_seconds": 1.98000343516469e-05,
+  "work_units": 110,
+  "num_variables": 22,
+  "num_constraints": 22,
+  "num_nonzeros": 22,
+  "iterations": 22,
+  "method": "indicator_propagation_and_sorted_activation",
+  "validation_source": "validation.json"
+}

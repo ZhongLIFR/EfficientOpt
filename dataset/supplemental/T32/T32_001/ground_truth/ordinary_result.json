@@ -1,0 +1,15 @@
+{
+  "problem_id": "T32_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 16.0,
+  "solver_runtime_seconds": 0.14767119998577982,
+  "code_run_time_seconds": 0.14767049998044968,
+  "work_units": 32768,
+  "num_variables": 15,
+  "num_constraints": 3,
+  "num_nonzeros": 15,
+  "iterations": 1,
+  "method": "global_log_fault_enumeration",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,85 @@
+{
+  "problem_id": "T39_003",
+  "target_technique": "T39",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 727386.7000000005,
+        "solution_checksum": 0.9,
+        "wall_seconds": 0.11246087500000002,
+        "runtime": 0.11246087500000002,
+        "work": 2102500,
+        "iterations": 1450,
+        "variables": 1,
+        "constraints": 0,
+        "nonzeros": 1450,
+        "method": "all_candidate_absolute_loss_scan"
+      },
+      "technique": {
+        "objective": 727386.7000000005,
+        "solution_checksum": 0.9,
+        "wall_seconds": 0.0001865000000000061,
+        "runtime": 0.0001865000000000061,
+        "work": 15950,
+        "iterations": 1,
+        "variables": 1,
+        "constraints": 0,
+        "nonzeros": 1450,
+        "method": "subgradient_weighted_median_condition"
+      },
+      "reference_objective": 727386.7000000005,
+      "runtime_speedup_percent": 99.83416454833736,
+      "work_reduction_percent": 99.24137931034483,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 727386.7000000005,
+        "solution_checksum": 0.9,
+        "wall_seconds": 0.11098212499999999,
+        "runtime": 0.11098212499999999,
+        "work": 2102500,
+        "iterations": 1450,
+        "variables": 1,
+        "constraints": 0,
+        "nonzeros": 1450,
+        "method": "all_candidate_absolute_loss_scan"
+      },
+      "technique": {
+        "objective": 727386.7000000005,
+        "solution_checksum": 0.9,
+        "wall_seconds": 0.00019670800000001765,
+        "runtime": 0.00019670800000001765,
+        "work": 15950,
+        "iterations": 1,
+        "variables": 1,
+        "constraints": 0,
+        "nonzeros": 1450,
+        "method": "subgradient_weighted_median_condition"
+      },
+      "reference_objective": 727386.7000000005,
+      "runtime_speedup_percent": 99.82275704308238,
+      "work_reduction_percent": 99.24137931034483,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.82275704308238,
+  "minimum_work_reduction_percent": 99.24137931034483,
+  "pass": true
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T28_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 15242370.0,
+  "solver_runtime_seconds": 0.123615459,
+  "code_run_time_seconds": 0.123615459,
+  "work_units": 722040,
+  "num_variables": 9000,
+  "num_constraints": 13500,
+  "num_nonzeros": 18000,
+  "iterations": 722040,
+  "method": "enumerated_repair_budget_search",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T27_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 55219182.0,
+  "solver_runtime_seconds": 1.1334000000001732e-05,
+  "code_run_time_seconds": 1.1334000000001732e-05,
+  "work_units": 42,
+  "num_variables": 7,
+  "num_constraints": 21,
+  "num_nonzeros": 42,
+  "iterations": 7,
+  "method": "staged_lexicographic_filtering",
+  "validation_source": "validation.json"
+}

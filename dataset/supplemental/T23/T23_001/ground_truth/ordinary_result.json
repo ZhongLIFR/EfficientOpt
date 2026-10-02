@@ -1,0 +1,15 @@
+{
+  "problem_id": "T23_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 905.0506666666668,
+  "solver_runtime_seconds": 0.550110333,
+  "code_run_time_seconds": 0.550110333,
+  "work_units": 3438000,
+  "num_variables": 18000,
+  "num_constraints": 18000,
+  "num_nonzeros": 18000,
+  "iterations": 12,
+  "method": "full_scenario_grid_scan",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T50_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1.0002573016770406,
+  "solver_runtime_seconds": 0.0018583340000013493,
+  "code_run_time_seconds": 0.0018583340000013493,
+  "work_units": 48932,
+  "num_variables": 36,
+  "num_constraints": 0,
+  "num_nonzeros": 1296,
+  "iterations": 1,
+  "method": "tucker_core_gram_normal_equation",
+  "validation_source": "validation.json"
+}

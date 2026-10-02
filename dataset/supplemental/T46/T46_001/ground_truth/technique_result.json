@@ -1,0 +1,15 @@
+{
+  "problem_id": "T46_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 322.80311386466997,
+  "solver_runtime_seconds": 0.00013475000000000292,
+  "code_run_time_seconds": 0.00013475000000000292,
+  "work_units": 65610,
+  "num_variables": 810,
+  "num_constraints": 90,
+  "num_nonzeros": 2160,
+  "iterations": 90,
+  "method": "block_diagonal_kkt",
+  "validation_source": "validation.json"
+}

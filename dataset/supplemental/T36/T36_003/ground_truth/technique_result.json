@@ -1,0 +1,15 @@
+{
+  "problem_id": "T36_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -19879.221556062446,
+  "solver_runtime_seconds": 0.0014912920000000052,
+  "code_run_time_seconds": 0.0014912920000000052,
+  "work_units": 5000,
+  "num_variables": 5000,
+  "num_constraints": 10000,
+  "num_nonzeros": 10000,
+  "iterations": 1,
+  "method": "dcp_stationarity_exp_cone_closed_form",
+  "validation_source": "validation.json"
+}

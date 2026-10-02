@@ -1,0 +1,15 @@
+{
+  "problem_id": "T33_003",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 23.0,
+  "solver_runtime_seconds": 0.0018699999200180173,
+  "code_run_time_seconds": 0.0018694999162107706,
+  "work_units": 77056,
+  "num_variables": 301,
+  "num_constraints": 32,
+  "num_nonzeros": 256,
+  "iterations": 301,
+  "method": "raw_mixed_sense_branch_evaluation",
+  "validation_source": "validation.json"
+}

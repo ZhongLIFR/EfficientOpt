@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 164.0,
+  "solver_runtime_seconds": 1.5300000086426735e-05,
+  "code_run_time_seconds": 1.5099998563528061e-05,
+  "work_units": 40,
+  "num_variables": 40,
+  "num_constraints": 8,
+  "num_nonzeros": 40,
+  "iterations": 8,
+  "method": "one_choice_native_selection",
+  "validation_source": "validation.json"
+}

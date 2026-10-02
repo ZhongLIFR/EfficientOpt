@@ -1,0 +1,93 @@
+{
+  "problem_id": "T41_001",
+  "target_technique": "T41",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": -115293.01024858472,
+        "solution_checksum": 229773.77440960766,
+        "max_vi_residual": 1.1368683772161603e-13,
+        "wall_seconds": 0.10007962499999999,
+        "runtime": 0.10007962499999999,
+        "work": 4913000,
+        "iterations": 1,
+        "variables": 170,
+        "constraints": 170,
+        "nonzeros": 28900,
+        "method": "dense_affine_vi_linear_system"
+      },
+      "technique": {
+        "objective": -115293.01024858461,
+        "solution_checksum": 229773.77440960772,
+        "max_vi_residual": 4.263256414560601e-14,
+        "wall_seconds": 9.308300000000769e-05,
+        "runtime": 9.308300000000769e-05,
+        "work": 170,
+        "iterations": 1,
+        "variables": 170,
+        "constraints": 170,
+        "nonzeros": 28900,
+        "method": "monotone_vi_aggregate_closed_form"
+      },
+      "reference_objective": -115293.01024858461,
+      "runtime_speedup_percent": 99.90699105836977,
+      "work_reduction_percent": 99.99653979238754,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_vi_residual_small": true,
+        "technique_vi_residual_small": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": -115293.01024858472,
+        "solution_checksum": 229773.77440960766,
+        "max_vi_residual": 1.1368683772161603e-13,
+        "wall_seconds": 0.10101466699999999,
+        "runtime": 0.10101466699999999,
+        "work": 4913000,
+        "iterations": 1,
+        "variables": 170,
+        "constraints": 170,
+        "nonzeros": 28900,
+        "method": "dense_affine_vi_linear_system"
+      },
+      "technique": {
+        "objective": -115293.01024858461,
+        "solution_checksum": 229773.77440960772,
+        "max_vi_residual": 4.263256414560601e-14,
+        "wall_seconds": 9.329199999999482e-05,
+        "runtime": 9.329199999999482e-05,
+        "work": 170,
+        "iterations": 1,
+        "variables": 170,
+        "constraints": 170,
+        "nonzeros": 28900,
+        "method": "monotone_vi_aggregate_closed_form"
+      },
+      "reference_objective": -115293.01024858461,
+      "runtime_speedup_percent": 99.9076450947465,
+      "work_reduction_percent": 99.99653979238754,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_vi_residual_small": true,
+        "technique_vi_residual_small": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.90699105836977,
+  "minimum_work_reduction_percent": 99.99653979238754,
+  "pass": true
+}

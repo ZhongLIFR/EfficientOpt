@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EfficientOpt Judge Case Input",
+  "type": "object",
+  "required": [
+    "problem_id",
+    "model_name",
+    "problem_statement",
+    "technique",
+    "candidate",
+    "ordinary_baseline",
+    "technique_baseline"
+  ],
+  "properties": {
+    "dataset_id": {"type": "string"},
+    "problem_id": {"type": "string"},
+    "model_name": {"type": "string"},
+    "problem_statement": {"type": "string"},
+    "technique": {"type": "object"},
+    "technique_catalog": {"type": "array", "items": {"type": "object"}},
+    "reference": {"type": "object"},
+    "reference_formulation": {"type": "string"},
+    "ordinary_reference_code": {"type": "string"},
+    "technique_reference_code": {"type": "string"},
+    "candidate": {"type": "object"},
+    "ordinary_baseline": {"type": "object"},
+    "technique_baseline": {"type": "object"},
+    "context_status": {"type": "object"},
+    "missing_context": {"type": "array", "items": {"type": "string"}}
+  }
+}

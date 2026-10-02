@@ -1,0 +1,15 @@
+{
+  "problem_id": "T50_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 274803.0245079036,
+  "solver_runtime_seconds": 1.00452875,
+  "code_run_time_seconds": 1.00452875,
+  "work_units": 5616000,
+  "num_variables": 1404000,
+  "num_constraints": 0,
+  "num_nonzeros": 1404000,
+  "iterations": 1,
+  "method": "dense_full_tensor_cp_shrinkage",
+  "validation_source": "validation.json"
+}

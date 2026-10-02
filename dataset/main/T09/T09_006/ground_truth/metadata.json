@@ -1,0 +1,8 @@
+{
+  "problem_id": "T09_006",
+  "technique_id": "T09",
+  "ordinary_result": "ordinary_result.json",
+  "technique_result": "technique_result.json",
+  "input_path": "../instance.json",
+  "split": "main"
+}

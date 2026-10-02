@@ -1,0 +1,15 @@
+{
+  "problem_id": "T11_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1030.045133022425,
+  "solver_runtime_seconds": 7.208000000001602e-06,
+  "code_run_time_seconds": 7.208000000001602e-06,
+  "work_units": 1224000,
+  "num_variables": 10201,
+  "num_constraints": 1,
+  "num_nonzeros": 10200,
+  "iterations": 120,
+  "method": "generic_soc_lagrange_bisection",
+  "validation_source": "validation.json"
+}

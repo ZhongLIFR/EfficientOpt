@@ -1,0 +1,85 @@
+{
+  "problem_id": "T42_003",
+  "target_technique": "T42",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 3396.9325256778966,
+        "solution_checksum": 209918.13290211273,
+        "wall_seconds": 0.023144291,
+        "runtime": 0.023144291,
+        "work": 8959730,
+        "iterations": 130,
+        "variables": 5330,
+        "constraints": 130,
+        "nonzeros": 15600,
+        "method": "independent_dense_kkt_for_each_parameter"
+      },
+      "technique": {
+        "objective": 3396.932525677898,
+        "solution_checksum": 209918.13290211273,
+        "wall_seconds": 0.0004975420000000036,
+        "runtime": 0.0004975420000000036,
+        "work": 5200,
+        "iterations": 130,
+        "variables": 170,
+        "constraints": 130,
+        "nonzeros": 170,
+        "method": "sensitivity_formula_reused_across_parameters"
+      },
+      "reference_objective": 3396.932525677898,
+      "runtime_speedup_percent": 97.85026035146204,
+      "work_reduction_percent": 99.94196253681751,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 3396.9325256778966,
+        "solution_checksum": 209918.13290211273,
+        "wall_seconds": 0.023407874999999995,
+        "runtime": 0.023407874999999995,
+        "work": 8959730,
+        "iterations": 130,
+        "variables": 5330,
+        "constraints": 130,
+        "nonzeros": 15600,
+        "method": "independent_dense_kkt_for_each_parameter"
+      },
+      "technique": {
+        "objective": 3396.932525677898,
+        "solution_checksum": 209918.13290211273,
+        "wall_seconds": 0.0005108340000000017,
+        "runtime": 0.0005108340000000017,
+        "work": 5200,
+        "iterations": 130,
+        "variables": 170,
+        "constraints": 130,
+        "nonzeros": 170,
+        "method": "sensitivity_formula_reused_across_parameters"
+      },
+      "reference_objective": 3396.932525677898,
+      "runtime_speedup_percent": 97.8176831515035,
+      "work_reduction_percent": 99.94196253681751,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 97.8176831515035,
+  "minimum_work_reduction_percent": 99.94196253681751,
+  "pass": true
+}

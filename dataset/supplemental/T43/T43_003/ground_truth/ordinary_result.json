@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_003",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 640.0,
+  "solver_runtime_seconds": 10.166820600046776,
+  "code_run_time_seconds": 10.166820100042969,
+  "work_units": 46137344,
+  "num_variables": 22,
+  "num_constraints": 1,
+  "num_nonzeros": 22,
+  "iterations": 4194304,
+  "method": "enumerate_knapsack_subsets",
+  "validation_source": "validation.json"
+}

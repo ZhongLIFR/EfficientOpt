@@ -1,0 +1,91 @@
+{
+  "problem_id": "T47_001",
+  "target_technique": "T47",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1.5969142331363841,
+        "core_checksum": 3.8369477700098074,
+        "wall_seconds": 0.632550875,
+        "runtime": 0.632550875,
+        "work": 12364800,
+        "iterations": 1,
+        "variables": 48316,
+        "constraints": 48300,
+        "nonzeros": 772800,
+        "method": "dense_entrywise_design_with_matrix_equalities",
+        "core_vector_length": 16
+      },
+      "technique": {
+        "objective": 1.596914233136384,
+        "core_checksum": 3.836947770009548,
+        "wall_seconds": 0.0007216669999999814,
+        "runtime": 0.0007216669999999814,
+        "work": 11136,
+        "iterations": 1,
+        "variables": 16,
+        "constraints": 0,
+        "nonzeros": 256,
+        "method": "gram_matrix_core_normal_equation",
+        "structure_preserved": "P C Q^T matrix form with only the small low-rank core optimized"
+      },
+      "reference_objective": 1.596914233136384,
+      "runtime_speedup_percent": 99.88591162726635,
+      "work_reduction_percent": 99.90993788819875,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_core_checksum": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1.5969142331363841,
+        "core_checksum": 3.8369477700098074,
+        "wall_seconds": 0.611986125,
+        "runtime": 0.611986125,
+        "work": 12364800,
+        "iterations": 1,
+        "variables": 48316,
+        "constraints": 48300,
+        "nonzeros": 772800,
+        "method": "dense_entrywise_design_with_matrix_equalities",
+        "core_vector_length": 16
+      },
+      "technique": {
+        "objective": 1.596914233136384,
+        "core_checksum": 3.836947770009548,
+        "wall_seconds": 0.0007128750000000572,
+        "runtime": 0.0007128750000000572,
+        "work": 11136,
+        "iterations": 1,
+        "variables": 16,
+        "constraints": 0,
+        "nonzeros": 256,
+        "method": "gram_matrix_core_normal_equation",
+        "structure_preserved": "P C Q^T matrix form with only the small low-rank core optimized"
+      },
+      "reference_objective": 1.596914233136384,
+      "runtime_speedup_percent": 99.88351451595409,
+      "work_reduction_percent": 99.90993788819875,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_core_checksum": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.88351451595409,
+  "minimum_work_reduction_percent": 99.90993788819875,
+  "pass": true
+}

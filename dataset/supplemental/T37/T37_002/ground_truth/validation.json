@@ -1,0 +1,85 @@
+{
+  "problem_id": "T37_002",
+  "target_technique": "T37",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 6223.189740572279,
+        "solution_checksum": -8101.917257684283,
+        "wall_seconds": 0.179122708,
+        "runtime": 0.179122708,
+        "work": 520000,
+        "iterations": 80,
+        "variables": 6500,
+        "constraints": 0,
+        "nonzeros": 6500,
+        "method": "generic_composite_convex_search"
+      },
+      "technique": {
+        "objective": 6223.1897405722775,
+        "solution_checksum": -8102.087712198393,
+        "wall_seconds": 0.0020764580000000032,
+        "runtime": 0.0020764580000000032,
+        "work": 6500,
+        "iterations": 1,
+        "variables": 6500,
+        "constraints": 0,
+        "nonzeros": 6500,
+        "method": "soft_thresholding_proximal_operator"
+      },
+      "reference_objective": 6223.1897405722775,
+      "runtime_speedup_percent": 98.84076227789053,
+      "work_reduction_percent": 98.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 6223.189740572279,
+        "solution_checksum": -8101.917257684283,
+        "wall_seconds": 0.18009879200000004,
+        "runtime": 0.18009879200000004,
+        "work": 520000,
+        "iterations": 80,
+        "variables": 6500,
+        "constraints": 0,
+        "nonzeros": 6500,
+        "method": "generic_composite_convex_search"
+      },
+      "technique": {
+        "objective": 6223.1897405722775,
+        "solution_checksum": -8102.087712198393,
+        "wall_seconds": 0.0020319580000000004,
+        "runtime": 0.0020319580000000004,
+        "work": 6500,
+        "iterations": 1,
+        "variables": 6500,
+        "constraints": 0,
+        "nonzeros": 6500,
+        "method": "soft_thresholding_proximal_operator"
+      },
+      "reference_objective": 6223.1897405722775,
+      "runtime_speedup_percent": 98.87175367617125,
+      "work_reduction_percent": 98.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 98.84076227789053,
+  "minimum_work_reduction_percent": 98.75,
+  "pass": true
+}

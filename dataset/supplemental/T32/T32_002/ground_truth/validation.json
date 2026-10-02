@@ -1,0 +1,81 @@
+{
+  "problem_id": "T32_002",
+  "target_technique": "T32",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 142.0,
+        "wall_seconds": 1.0997373000718653,
+        "runtime": 1.0997382000787184,
+        "work": 262144,
+        "iterations": 1,
+        "variables": 18,
+        "constraints": 12,
+        "nonzeros": 24,
+        "method": "global_repair_set_enumeration"
+      },
+      "technique": {
+        "objective": 142.0,
+        "wall_seconds": 0.00031869998201727867,
+        "runtime": 0.00031889998354017735,
+        "work": 48,
+        "iterations": 6,
+        "variables": 18,
+        "constraints": 12,
+        "nonzeros": 24,
+        "method": "conflict_log_component_diagnosis"
+      },
+      "reference_objective": 142.0,
+      "runtime_speedup_percent": 99.97100219092896,
+      "work_reduction_percent": 99.981689453125,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 142.0,
+        "wall_seconds": 1.1085957000032067,
+        "runtime": 1.1085959000047296,
+        "work": 262144,
+        "iterations": 1,
+        "variables": 18,
+        "constraints": 12,
+        "nonzeros": 24,
+        "method": "global_repair_set_enumeration"
+      },
+      "technique": {
+        "objective": 142.0,
+        "wall_seconds": 0.00025130005087703466,
+        "runtime": 0.0002516000531613827,
+        "work": 48,
+        "iterations": 6,
+        "variables": 18,
+        "constraints": 12,
+        "nonzeros": 24,
+        "method": "conflict_log_component_diagnosis"
+      },
+      "reference_objective": 142.0,
+      "runtime_speedup_percent": 99.97730461991061,
+      "work_reduction_percent": 99.981689453125,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.97100219092896,
+  "minimum_work_reduction_percent": 99.981689453125,
+  "pass": true
+}

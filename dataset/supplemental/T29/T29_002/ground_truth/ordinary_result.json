@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 11877700.95,
+  "solver_runtime_seconds": 0.09872830007225275,
+  "code_run_time_seconds": 0.09872720006387681,
+  "work_units": 242268,
+  "num_variables": 480000,
+  "num_constraints": 6000,
+  "num_nonzeros": 480000,
+  "iterations": 6000,
+  "method": "scan_all_piecewise_segments",
+  "validation_source": "validation.json"
+}

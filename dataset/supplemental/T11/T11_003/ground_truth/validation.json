@@ -1,0 +1,93 @@
+{
+  "problem_id": "T11_003",
+  "target_technique": "T11",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1349.412969302498,
+        "solution_checksum": 559970.8945044936,
+        "max_feasibility_error": 7.105427357601002e-15,
+        "wall_seconds": 7.750000000000812e-06,
+        "runtime": 7.750000000000812e-06,
+        "work": 1056000,
+        "iterations": 120,
+        "variables": 8801,
+        "constraints": 1,
+        "nonzeros": 8800,
+        "method": "generic_soc_lagrange_bisection"
+      },
+      "technique": {
+        "objective": 1349.4129693024984,
+        "solution_checksum": 559970.8945044935,
+        "max_feasibility_error": 0.0,
+        "wall_seconds": 1.332999999999196e-06,
+        "runtime": 1.332999999999196e-06,
+        "work": 8800,
+        "iterations": 1,
+        "variables": 8801,
+        "constraints": 1,
+        "nonzeros": 8800,
+        "method": "direct_second_order_cone_projection"
+      },
+      "reference_objective": 1349.4129693024984,
+      "runtime_speedup_percent": 82.80000000001218,
+      "work_reduction_percent": 99.16666666666667,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_feasible": true,
+        "technique_feasible": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1349.412969302498,
+        "solution_checksum": 559970.8945044936,
+        "max_feasibility_error": 7.105427357601002e-15,
+        "wall_seconds": 8.125000000001187e-06,
+        "runtime": 8.125000000001187e-06,
+        "work": 1056000,
+        "iterations": 120,
+        "variables": 8801,
+        "constraints": 1,
+        "nonzeros": 8800,
+        "method": "generic_soc_lagrange_bisection"
+      },
+      "technique": {
+        "objective": 1349.4129693024984,
+        "solution_checksum": 559970.8945044935,
+        "max_feasibility_error": 0.0,
+        "wall_seconds": 6.669999999993348e-07,
+        "runtime": 6.669999999993348e-07,
+        "work": 8800,
+        "iterations": 1,
+        "variables": 8801,
+        "constraints": 1,
+        "nonzeros": 8800,
+        "method": "direct_second_order_cone_projection"
+      },
+      "reference_objective": 1349.4129693024984,
+      "runtime_speedup_percent": 91.79076923077862,
+      "work_reduction_percent": 99.16666666666667,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_feasible": true,
+        "technique_feasible": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 82.80000000001218,
+  "minimum_work_reduction_percent": 99.16666666666667,
+  "pass": true
+}

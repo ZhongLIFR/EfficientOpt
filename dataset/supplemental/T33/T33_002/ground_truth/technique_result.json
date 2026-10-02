@@ -1,0 +1,15 @@
+{
+  "problem_id": "T33_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 4.8467614016778965e-27,
+  "solver_runtime_seconds": 0.025437899981625378,
+  "code_run_time_seconds": 0.02543769998010248,
+  "work_units": 4680,
+  "num_variables": 2520,
+  "num_constraints": 18,
+  "num_nonzeros": 180,
+  "iterations": 140,
+  "method": "canonical_sparse_coefficient_aggregation",
+  "validation_source": "validation.json"
+}

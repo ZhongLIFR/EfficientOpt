@@ -1,0 +1,15 @@
+{
+  "problem_id": "T39_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 794568.1000000008,
+  "solver_runtime_seconds": 0.134911209,
+  "code_run_time_seconds": 0.134911209,
+  "work_units": 2560000,
+  "num_variables": 1,
+  "num_constraints": 0,
+  "num_nonzeros": 1600,
+  "iterations": 1600,
+  "method": "all_candidate_absolute_loss_scan",
+  "validation_source": "validation.json"
+}

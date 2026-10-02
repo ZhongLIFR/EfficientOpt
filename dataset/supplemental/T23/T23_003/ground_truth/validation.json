@@ -1,0 +1,85 @@
+{
+  "problem_id": "T23_003",
+  "target_technique": "T23",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1133.0080000000003,
+        "solution_checksum": 12203.0,
+        "wall_seconds": 0.508445291,
+        "runtime": 0.508445291,
+        "work": 3203200,
+        "iterations": 13,
+        "variables": 18200,
+        "constraints": 18200,
+        "nonzeros": 18200,
+        "method": "full_scenario_grid_scan"
+      },
+      "technique": {
+        "objective": 1133.0080000000003,
+        "solution_checksum": 12203.0,
+        "wall_seconds": 0.0036255000000000592,
+        "runtime": 0.0036255000000000592,
+        "work": 200200,
+        "iterations": 13,
+        "variables": 13,
+        "constraints": 13,
+        "nonzeros": 18200,
+        "method": "scenario_decomposition_quantile_rule"
+      },
+      "reference_objective": 1133.0080000000003,
+      "runtime_speedup_percent": 99.28694393198735,
+      "work_reduction_percent": 93.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1133.0080000000003,
+        "solution_checksum": 12203.0,
+        "wall_seconds": 0.517768042,
+        "runtime": 0.517768042,
+        "work": 3203200,
+        "iterations": 13,
+        "variables": 18200,
+        "constraints": 18200,
+        "nonzeros": 18200,
+        "method": "full_scenario_grid_scan"
+      },
+      "technique": {
+        "objective": 1133.0080000000003,
+        "solution_checksum": 12203.0,
+        "wall_seconds": 0.0036959999999999216,
+        "runtime": 0.0036959999999999216,
+        "work": 200200,
+        "iterations": 13,
+        "variables": 13,
+        "constraints": 13,
+        "nonzeros": 18200,
+        "method": "scenario_decomposition_quantile_rule"
+      },
+      "reference_objective": 1133.0080000000003,
+      "runtime_speedup_percent": 99.28616683530268,
+      "work_reduction_percent": 93.75,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.28616683530268,
+  "minimum_work_reduction_percent": 93.75,
+  "pass": true
+}

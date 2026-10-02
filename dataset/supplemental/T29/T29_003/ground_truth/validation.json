@@ -1,0 +1,121 @@
+{
+  "problem_id": "T29_003",
+  "target_technique": "T29",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 164.0,
+        "wall_seconds": 0.3963872999884188,
+        "runtime": 0.3963878999929875,
+        "work": 3125000,
+        "iterations": 390625,
+        "variables": 40,
+        "constraints": 8,
+        "nonzeros": 40,
+        "method": "enumerate_one_choice_assignments",
+        "selected_modes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "technique": {
+        "objective": 164.0,
+        "wall_seconds": 1.5099998563528061e-05,
+        "runtime": 1.5300000086426735e-05,
+        "work": 40,
+        "iterations": 8,
+        "variables": 40,
+        "constraints": 8,
+        "nonzeros": 40,
+        "method": "one_choice_native_selection",
+        "selected_modes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "reference_objective": 164.0,
+      "runtime_speedup_percent": 99.99614014451836,
+      "work_reduction_percent": 99.99872,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 164.0,
+        "wall_seconds": 0.38050219998694956,
+        "runtime": 0.38050239998847246,
+        "work": 3125000,
+        "iterations": 390625,
+        "variables": 40,
+        "constraints": 8,
+        "nonzeros": 40,
+        "method": "enumerate_one_choice_assignments",
+        "selected_modes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "technique": {
+        "objective": 164.0,
+        "wall_seconds": 1.2400094419717789e-05,
+        "runtime": 1.2600095942616463e-05,
+        "work": 40,
+        "iterations": 8,
+        "variables": 40,
+        "constraints": 8,
+        "nonzeros": 40,
+        "method": "one_choice_native_selection",
+        "selected_modes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "reference_objective": 164.0,
+      "runtime_speedup_percent": 99.99668856334598,
+      "work_reduction_percent": 99.99872,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99614014451836,
+  "minimum_work_reduction_percent": 99.99872,
+  "pass": true
+}

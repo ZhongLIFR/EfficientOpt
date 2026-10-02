@@ -1,0 +1,15 @@
+{
+  "problem_id": "T14_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 23247.348424406424,
+  "solver_runtime_seconds": 1.553174292,
+  "code_run_time_seconds": 1.553174292,
+  "work_units": 335940504,
+  "num_variables": 5784,
+  "num_constraints": 2904,
+  "num_nonzeros": 11520,
+  "iterations": 24,
+  "method": "centralized_dense_kkt",
+  "validation_source": "validation.json"
+}

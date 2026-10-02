@@ -1,0 +1,15 @@
+{
+  "problem_id": "T26_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": -351.57015,
+  "solver_runtime_seconds": 3.0409999999952975e-06,
+  "code_run_time_seconds": 3.0409999999952975e-06,
+  "work_units": 10,
+  "num_variables": 10,
+  "num_constraints": 20,
+  "num_nonzeros": 20,
+  "iterations": 1,
+  "method": "closed_form_kkt_complementarity_clipping",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,164 @@
+{
+  "task_separation": {
+    "reformulation_input": "Raw benchmark problems from MAMO, NL4OPT, or custom source sets.",
+    "reformulation_output": "Reformulated benchmark items stored under optdachshund/outputs/reformulated_benchmark/.",
+    "evaluation_input": "The reformulated benchmark output JSONL. Evaluation code must not read raw source benchmark files."
+  },
+  "coverage_rules": {
+    "min_items_per_technique": 5,
+    "max_techniques_per_source_problem": 4,
+    "min_techniques_per_source_problem": 1,
+    "one_reformulated_item_targets_one_primary_technique": true,
+    "allow_secondary_tags": true
+  },
+  "traceability_rules": {
+    "min_kept_source_elements": 3,
+    "allowed_kept_elements": [
+      "business setting",
+      "variable meanings",
+      "cost/reward logic",
+      "capacity/resource limits",
+      "minimum demand/service requirements",
+      "integer or continuity assumptions",
+      "bounds",
+      "time/scenario/network structure"
+    ],
+    "source_answer_is_not_target_answer": true
+  },
+  "quality_rules": {
+    "do_not_leak_technique_name_in_problem_statement": true,
+    "must_generate_new_answer": true,
+    "must_include_structured_mathematical_model": true,
+    "must_include_technique_solution": true,
+    "must_include_validation": true,
+    "must_include_efficiency_signals": true,
+    "must_include_diversity_profile": true,
+    "must_avoid_near_duplicate_questions": true,
+    "must_avoid_shallow_number_substitution": true,
+    "must_not_generate_forced_naive_expert_pair": true,
+    "general_llm_baselines_are_evaluation_outputs_only": true
+  },
+  "diversity_rules": {
+    "avoid_over_reliance_on_source_template": true,
+    "must_change_at_least_two_of": [
+      "business domain",
+      "variable structure",
+      "constraint structure",
+      "objective structure",
+      "scale/unit system",
+      "time/scenario/network structure",
+      "answer form"
+    ],
+    "number_only_changes_are_rejected": true,
+    "require_novelty_axis": true,
+    "compare_against_accepted_items": true,
+    "preferred_reformulation_operators": [
+      "domain shift while preserving optimization structure",
+      "add a meaningful coupling constraint",
+      "convert a scalar decision into indexed decisions",
+      "introduce time, scenario, or network structure when natural",
+      "change scale/units to expose bound or conditioning issues",
+      "alter objective hierarchy or penalty structure when aligned with the target technique"
+    ]
+  },
+  "technique_matching_rules": {
+    "each_source_problem_should_be_matched_by_llm": true,
+    "candidate_technique_count": 3,
+    "matching_criteria": [
+      "structural fit",
+      "expected efficiency contrast",
+      "traceability to source problem",
+      "difficulty control",
+      "availability of validation path"
+    ]
+  },
+  "validation_rules": {
+    "small_instances_need_numeric_answer": true,
+    "medium_or_scaled_instances_need_verifier_notes": true,
+    "if_solver_code_is_not_available_return_symbolic_or_manual_certificate": true,
+    "reject_if_infeasible_or_ambiguous": true
+  },
+  "batch_generation_rules": {
+    "deduplicate_by_source_and_primary_technique_with_llm_audit": true,
+    "deduplicate_by_question_text_similarity_with_llm_audit": true,
+    "continue_until_each_technique_has_min_items_when_possible": true,
+    "write_plan_before_generation": true,
+    "write_failed_items_for_review": true
+  },
+  "reference_generation_rules": {
+    "generate_bundle_reference_package": true,
+    "ordinary_model_py_required": true,
+    "technique_model_py_required": true,
+    "ordinary_model_role": "A correct but ordinary/general formulation that a non-specialist LLM might naturally write. It may use a generic larger formulation, loose Big-M, explicit unit-level variables, enumeration, or weaker constraints when mathematically correct.",
+    "technique_model_role": "A correct reference formulation that structurally uses the target OptTips technique and is expected to improve model size, solver work, or runtime.",
+    "do_not_call_them_naive_or_expert_in_public_problem": true,
+    "problem_md_public_only": true,
+    "problem_md_must_not_reveal_target_technique": true,
+    "instance_json_is_fixed_public_input": true,
+    "models_must_read_instance_json": true,
+    "models_must_expose_solve_function": true,
+    "solve_function_signature": "solve(instance_path='instance.json', params=None)",
+    "solve_return_fields": [
+      "status",
+      "objective_value",
+      "solver_name",
+      "model_build_seconds",
+      "solver_runtime_seconds",
+      "code_run_time_seconds",
+      "num_variables",
+      "num_constraints",
+      "num_nonzeros",
+      "work_units",
+      "mip_gap",
+      "solution_summary",
+      "notes"
+    ],
+    "preferred_solver_order": [
+      "gurobipy",
+      "scipy.optimize.milp or scipy.optimize.linprog",
+      "deterministic exact Python algorithm only for small instances"
+    ],
+    "gurobi_deterministic_parameters": {
+      "Threads": 1,
+      "Seed": 0,
+      "TimeLimit": 300,
+      "MIPGap": 0,
+      "FeasibilityTol": 1e-9,
+      "IntFeasTol": 1e-9,
+      "OptimalityTol": 1e-9
+    },
+    "validation_json_required_schema": {
+      "problem_id": "string",
+      "ok": true,
+      "rounds": [
+        {
+          "round": 1,
+          "ordinary": "ordinary solve result dict",
+          "technique": "technique solve result dict",
+          "objective_match": true,
+          "runtime_speedup_percent": "number or null",
+          "work_reduction_percent": "number or null"
+        }
+      ],
+      "summary": {
+        "reference_objective_value": "number or string",
+        "ordinary_median_solver_runtime_seconds": "number or null",
+        "technique_median_solver_runtime_seconds": "number or null",
+        "ordinary_median_code_run_time_seconds": "number or null",
+        "technique_median_code_run_time_seconds": "number or null",
+        "minimum_runtime_speedup_percent": "number or null",
+        "minimum_work_reduction_percent": "number or null",
+        "ordinary_num_variables": "integer or null",
+        "technique_num_variables": "integer or null",
+        "ordinary_num_constraints": "integer or null",
+        "technique_num_constraints": "integer or null"
+      }
+    },
+    "acceptance_expectations": [
+      "ordinary_model.py and technique_model.py must solve the same fixed instance and agree on the objective value within tolerance",
+      "technique_model.py must use the target technique structurally, not by comments only",
+      "validation.py must run both reference models in two sequential rounds and record objective, runtime, Gurobi Work when available, variable count, constraint count, and status",
+      "if runtime speedup is noisy or absent, validation must still report model-size/work metrics and explain the expected contrast"
+    ]
+  }
+}

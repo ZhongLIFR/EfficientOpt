@@ -1,0 +1,93 @@
+{
+  "problem_id": "T40_003",
+  "target_technique": "T40",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 3866.9508785086273,
+        "solution_checksum": 8615362.824130561,
+        "max_feasibility_error": 4.547473508864641e-13,
+        "wall_seconds": 0.073384166,
+        "runtime": 0.073384166,
+        "work": 1080000,
+        "iterations": 120,
+        "variables": 9000,
+        "constraints": 9001,
+        "nonzeros": 18000,
+        "method": "generic_projection_dual_bisection"
+      },
+      "technique": {
+        "objective": 3866.9508785086277,
+        "solution_checksum": 8615362.824130557,
+        "max_feasibility_error": 1.5916157281026244e-12,
+        "wall_seconds": 0.0014575839999999979,
+        "runtime": 0.0014575839999999979,
+        "work": 126000,
+        "iterations": 1,
+        "variables": 9000,
+        "constraints": 9001,
+        "nonzeros": 18000,
+        "method": "simplex_projection_sort_threshold"
+      },
+      "reference_objective": 3866.9508785086277,
+      "runtime_speedup_percent": 98.01376226037644,
+      "work_reduction_percent": 88.33333333333333,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_feasible": true,
+        "technique_feasible": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 3866.9508785086273,
+        "solution_checksum": 8615362.824130561,
+        "max_feasibility_error": 4.547473508864641e-13,
+        "wall_seconds": 0.07360341699999999,
+        "runtime": 0.07360341699999999,
+        "work": 1080000,
+        "iterations": 120,
+        "variables": 9000,
+        "constraints": 9001,
+        "nonzeros": 18000,
+        "method": "generic_projection_dual_bisection"
+      },
+      "technique": {
+        "objective": 3866.9508785086277,
+        "solution_checksum": 8615362.824130557,
+        "max_feasibility_error": 1.5916157281026244e-12,
+        "wall_seconds": 0.0014447499999999946,
+        "runtime": 0.0014447499999999946,
+        "work": 126000,
+        "iterations": 1,
+        "variables": 9000,
+        "constraints": 9001,
+        "nonzeros": 18000,
+        "method": "simplex_projection_sort_threshold"
+      },
+      "reference_objective": 3866.9508785086277,
+      "runtime_speedup_percent": 98.03711558663099,
+      "work_reduction_percent": 88.33333333333333,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "ordinary_feasible": true,
+        "technique_feasible": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 98.01376226037644,
+  "minimum_work_reduction_percent": 88.33333333333333,
+  "pass": true
+}

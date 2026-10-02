@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 11877700.95,
+  "solver_runtime_seconds": 0.09266320010647178,
+  "code_run_time_seconds": 0.09266290010418743,
+  "work_units": 38408,
+  "num_variables": 480000,
+  "num_constraints": 6000,
+  "num_nonzeros": 480000,
+  "iterations": 6000,
+  "method": "ordered_piecewise_segment_lookup",
+  "validation_source": "validation.json"
+}

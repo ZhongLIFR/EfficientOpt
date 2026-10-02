@@ -1,0 +1,15 @@
+{
+  "problem_id": "T29_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 408.0,
+  "solver_runtime_seconds": 0.6828030999749899,
+  "code_run_time_seconds": 0.6828018999658525,
+  "work_units": 7759752,
+  "num_variables": 22,
+  "num_constraints": 1,
+  "num_nonzeros": 22,
+  "iterations": 705432,
+  "method": "enumerate_indicator_activation_patterns",
+  "validation_source": "validation.json"
+}

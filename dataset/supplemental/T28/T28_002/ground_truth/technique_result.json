@@ -1,0 +1,15 @@
+{
+  "problem_id": "T28_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 15242370.0,
+  "solver_runtime_seconds": 0.0016199580000000047,
+  "code_run_time_seconds": 0.0016199580000000047,
+  "work_units": 4500,
+  "num_variables": 9000,
+  "num_constraints": 13500,
+  "num_nonzeros": 18000,
+  "iterations": 1,
+  "method": "explicit_overtime_and_shortage_slacks",
+  "validation_source": "validation.json"
+}

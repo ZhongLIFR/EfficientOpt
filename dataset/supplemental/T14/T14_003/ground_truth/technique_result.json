@@ -1,0 +1,15 @@
+{
+  "problem_id": "T14_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 14490.961617906505,
+  "solver_runtime_seconds": 0.013489332999999992,
+  "code_run_time_seconds": 0.013489332999999992,
+  "work_units": 61200,
+  "num_variables": 1820,
+  "num_constraints": 1800,
+  "num_nonzeros": 3600,
+  "iterations": 34,
+  "method": "consensus_admm_closed_form",
+  "validation_source": "validation.json"
+}

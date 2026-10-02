@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 180.1,
+  "solver_runtime_seconds": 7.159996312111616e-05,
+  "code_run_time_seconds": 7.139996159821749e-05,
+  "work_units": 102,
+  "num_variables": 90,
+  "num_constraints": 90,
+  "num_nonzeros": 450,
+  "iterations": 10,
+  "method": "inventory_state_transition_dynamic_programming",
+  "validation_source": "validation.json"
+}

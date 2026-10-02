@@ -1,0 +1,15 @@
+{
+  "problem_id": "T47_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 15209.51569288225,
+  "solver_runtime_seconds": 0.171801583,
+  "code_run_time_seconds": 0.171801583,
+  "work_units": 699200,
+  "num_variables": 699200,
+  "num_constraints": 1680,
+  "num_nonzeros": 1398400,
+  "iterations": 1,
+  "method": "dense_flattened_matrix_projection",
+  "validation_source": "validation.json"
+}

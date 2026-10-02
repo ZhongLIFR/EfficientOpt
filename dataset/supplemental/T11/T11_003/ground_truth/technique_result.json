@@ -1,0 +1,15 @@
+{
+  "problem_id": "T11_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 1349.4129693024984,
+  "solver_runtime_seconds": 1.332999999999196e-06,
+  "code_run_time_seconds": 1.332999999999196e-06,
+  "work_units": 8800,
+  "num_variables": 8801,
+  "num_constraints": 1,
+  "num_nonzeros": 8800,
+  "iterations": 1,
+  "method": "direct_second_order_cone_projection",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T43_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 4.0,
+  "solver_runtime_seconds": 2.752162499935366,
+  "code_run_time_seconds": 2.7521620999323204,
+  "work_units": 12146179,
+  "num_variables": 100,
+  "num_constraints": 100,
+  "num_nonzeros": 300,
+  "iterations": 12146179,
+  "method": "recursive_alignment_path_enumeration",
+  "validation_source": "validation.json"
+}

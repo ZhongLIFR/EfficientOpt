@@ -1,0 +1,85 @@
+{
+  "problem_id": "T26_003",
+  "target_technique": "T26",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": -426.9551928571429,
+        "solution_checksum": 316.17999999999995,
+        "wall_seconds": 0.210272334,
+        "runtime": 0.210272334,
+        "work": 1948617,
+        "iterations": 177147,
+        "variables": 11,
+        "constraints": 22,
+        "nonzeros": 22,
+        "method": "enumerate_complementarity_active_statuses"
+      },
+      "technique": {
+        "objective": -426.9551928571429,
+        "solution_checksum": 316.17999999999995,
+        "wall_seconds": 2.6669999999839877e-06,
+        "runtime": 2.6669999999839877e-06,
+        "work": 11,
+        "iterations": 1,
+        "variables": 11,
+        "constraints": 22,
+        "nonzeros": 22,
+        "method": "closed_form_kkt_complementarity_clipping"
+      },
+      "reference_objective": -426.9551928571429,
+      "runtime_speedup_percent": 99.99873164483922,
+      "work_reduction_percent": 99.99943549707305,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": -426.9551928571429,
+        "solution_checksum": 316.17999999999995,
+        "wall_seconds": 0.17863025000000002,
+        "runtime": 0.17863025000000002,
+        "work": 1948617,
+        "iterations": 177147,
+        "variables": 11,
+        "constraints": 22,
+        "nonzeros": 22,
+        "method": "enumerate_complementarity_active_statuses"
+      },
+      "technique": {
+        "objective": -426.9551928571429,
+        "solution_checksum": 316.17999999999995,
+        "wall_seconds": 2.8750000000132836e-06,
+        "runtime": 2.8750000000132836e-06,
+        "work": 11,
+        "iterations": 1,
+        "variables": 11,
+        "constraints": 22,
+        "nonzeros": 22,
+        "method": "closed_form_kkt_complementarity_clipping"
+      },
+      "reference_objective": -426.9551928571429,
+      "runtime_speedup_percent": 99.99839053015937,
+      "work_reduction_percent": 99.99943549707305,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99839053015937,
+  "minimum_work_reduction_percent": 99.99943549707305,
+  "pass": true
+}

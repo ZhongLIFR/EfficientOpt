@@ -1,0 +1,15 @@
+{
+  "problem_id": "T47_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 15209.515692881798,
+  "solver_runtime_seconds": 7.87079999999829e-05,
+  "code_run_time_seconds": 7.87079999999829e-05,
+  "work_units": 1680,
+  "num_variables": 1680,
+  "num_constraints": 1680,
+  "num_nonzeros": 1680,
+  "iterations": 1,
+  "method": "additive_rank_two_marginal_projection",
+  "validation_source": "validation.json"
+}

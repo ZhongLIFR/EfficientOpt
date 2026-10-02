@@ -1,0 +1,91 @@
+{
+  "problem_id": "T45_001",
+  "target_technique": "T45",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 36325.214532871825,
+        "solution_checksum": -209125.0,
+        "cq_valid": false,
+        "wall_seconds": 0.234156625,
+        "runtime": 0.234156625,
+        "work": 1529500,
+        "iterations": 1,
+        "variables": 9500,
+        "constraints": 9500,
+        "nonzeros": 9500,
+        "method": "generic_kkt_search_despite_failed_cq"
+      },
+      "technique": {
+        "objective": 36325.214532871825,
+        "solution_checksum": -209125.0,
+        "cq_valid": false,
+        "wall_seconds": 0.0012796250000000065,
+        "runtime": 0.0012796250000000065,
+        "work": 9500,
+        "iterations": 1,
+        "variables": 0,
+        "constraints": 0,
+        "nonzeros": 0,
+        "method": "constraint_qualification_audit_reduce_zero_gradient_constraints"
+      },
+      "reference_objective": 36325.214532871825,
+      "runtime_speedup_percent": 99.45351749069667,
+      "work_reduction_percent": 99.37888198757764,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "cq_failure_detected": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 36325.214532871825,
+        "solution_checksum": -209125.0,
+        "cq_valid": false,
+        "wall_seconds": 0.23291870799999997,
+        "runtime": 0.23291870799999997,
+        "work": 1529500,
+        "iterations": 1,
+        "variables": 9500,
+        "constraints": 9500,
+        "nonzeros": 9500,
+        "method": "generic_kkt_search_despite_failed_cq"
+      },
+      "technique": {
+        "objective": 36325.214532871825,
+        "solution_checksum": -209125.0,
+        "cq_valid": false,
+        "wall_seconds": 0.0012509159999999908,
+        "runtime": 0.0012509159999999908,
+        "work": 9500,
+        "iterations": 1,
+        "variables": 0,
+        "constraints": 0,
+        "nonzeros": 0,
+        "method": "constraint_qualification_audit_reduce_zero_gradient_constraints"
+      },
+      "reference_objective": 36325.214532871825,
+      "runtime_speedup_percent": 99.46293880352454,
+      "work_reduction_percent": 99.37888198757764,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_not_larger": true,
+        "cq_failure_detected": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.45351749069667,
+  "minimum_work_reduction_percent": 99.37888198757764,
+  "pass": true
+}

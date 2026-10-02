@@ -1,0 +1,15 @@
+{
+  "problem_id": "T37_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 6223.1897405722775,
+  "solver_runtime_seconds": 0.0020764580000000032,
+  "code_run_time_seconds": 0.0020764580000000032,
+  "work_units": 6500,
+  "num_variables": 6500,
+  "num_constraints": 0,
+  "num_nonzeros": 6500,
+  "iterations": 1,
+  "method": "soft_thresholding_proximal_operator",
+  "validation_source": "validation.json"
+}

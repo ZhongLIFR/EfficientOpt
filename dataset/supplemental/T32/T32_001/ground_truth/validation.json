@@ -1,0 +1,81 @@
+{
+  "problem_id": "T32_001",
+  "target_technique": "T32",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 16.0,
+        "wall_seconds": 0.14767049998044968,
+        "runtime": 0.14767119998577982,
+        "work": 32768,
+        "iterations": 1,
+        "variables": 15,
+        "constraints": 3,
+        "nonzeros": 15,
+        "method": "global_log_fault_enumeration"
+      },
+      "technique": {
+        "objective": 16.0,
+        "wall_seconds": 0.00032510003075003624,
+        "runtime": 0.0003253000322729349,
+        "work": 96,
+        "iterations": 3,
+        "variables": 15,
+        "constraints": 3,
+        "nonzeros": 15,
+        "method": "log_connected_component_decomposition"
+      },
+      "reference_objective": 16.0,
+      "runtime_speedup_percent": 99.77971328715128,
+      "work_reduction_percent": 99.70703125,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 16.0,
+        "wall_seconds": 0.14464249997399747,
+        "runtime": 0.14464269997552037,
+        "work": 32768,
+        "iterations": 1,
+        "variables": 15,
+        "constraints": 3,
+        "nonzeros": 15,
+        "method": "global_log_fault_enumeration"
+      },
+      "technique": {
+        "objective": 16.0,
+        "wall_seconds": 0.0003079000161960721,
+        "runtime": 0.0003081000177189708,
+        "work": 96,
+        "iterations": 3,
+        "variables": 15,
+        "constraints": 3,
+        "nonzeros": 15,
+        "method": "log_connected_component_decomposition"
+      },
+      "reference_objective": 16.0,
+      "runtime_speedup_percent": 99.78699234889066,
+      "work_reduction_percent": 99.70703125,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.77971328715128,
+  "minimum_work_reduction_percent": 99.70703125,
+  "pass": true
+}

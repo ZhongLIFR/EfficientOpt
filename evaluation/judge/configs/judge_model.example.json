@@ -1,0 +1,8 @@
+{
+  "provider": "openai_compatible",
+  "base_url_env": "EFFICIENTOPT_JUDGE_BASE_URL",
+  "api_key_env": "EFFICIENTOPT_JUDGE_API_KEY",
+  "model": "your-judge-model",
+  "temperature": 0.0,
+  "max_tokens": 1600
+}

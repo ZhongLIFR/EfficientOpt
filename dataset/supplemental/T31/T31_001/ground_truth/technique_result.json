@@ -1,0 +1,15 @@
+{
+  "problem_id": "T31_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 147.0,
+  "solver_runtime_seconds": 0.001622700016014278,
+  "code_run_time_seconds": 0.0016222000122070312,
+  "work_units": 2190,
+  "num_variables": 120,
+  "num_constraints": 120,
+  "num_nonzeros": 2190,
+  "iterations": 120,
+  "method": "topological_dag_shortest_path",
+  "validation_source": "validation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "problem_id": "T28_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 199222125.0,
+  "solver_runtime_seconds": 0.193189167,
+  "code_run_time_seconds": 0.193189167,
+  "work_units": 2097075,
+  "num_variables": 2880,
+  "num_constraints": 2880,
+  "num_nonzeros": 2880,
+  "iterations": 2097075,
+  "method": "unit_budget_feasibility_search",
+  "validation_source": "validation.json"
+}

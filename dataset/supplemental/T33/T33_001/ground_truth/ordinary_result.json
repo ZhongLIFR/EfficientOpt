@@ -1,0 +1,15 @@
+{
+  "problem_id": "T33_001",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 3187.708055555556,
+  "solver_runtime_seconds": 0.052379699889570475,
+  "code_run_time_seconds": 0.05237939988728613,
+  "work_units": 369600,
+  "num_variables": 660,
+  "num_constraints": 210,
+  "num_nonzeros": 1680,
+  "iterations": 220,
+  "method": "rebuild_block_quadratics_per_candidate",
+  "validation_source": "validation.json"
+}

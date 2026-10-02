@@ -1,0 +1,15 @@
+{
+  "problem_id": "T31_003",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 471.0,
+  "solver_runtime_seconds": 4.9400026910007e-05,
+  "code_run_time_seconds": 4.910002462565899e-05,
+  "work_units": 22,
+  "num_variables": 22,
+  "num_constraints": 21,
+  "num_nonzeros": 21,
+  "iterations": 22,
+  "method": "tree_message_passing_independent_set",
+  "validation_source": "validation.json"
+}

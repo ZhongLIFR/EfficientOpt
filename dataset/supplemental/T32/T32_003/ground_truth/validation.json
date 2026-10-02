@@ -1,0 +1,85 @@
+{
+  "problem_id": "T32_003",
+  "target_technique": "T32",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 372.0,
+        "wall_seconds": 0.006123799947090447,
+        "runtime": 0.006124499952420592,
+        "work": 11190,
+        "iterations": 373,
+        "variables": 30,
+        "constraints": 1,
+        "nonzeros": 30,
+        "method": "scan_all_threshold_candidates",
+        "residual": 30.799999999999955
+      },
+      "technique": {
+        "objective": 372.0,
+        "wall_seconds": 0.00025699997786432505,
+        "runtime": 0.00025749998167157173,
+        "work": 390,
+        "iterations": 13,
+        "variables": 30,
+        "constraints": 1,
+        "nonzeros": 30,
+        "method": "log_guided_binary_threshold",
+        "residual": 30.799999999999955
+      },
+      "reference_objective": 372.0,
+      "runtime_speedup_percent": 95.79557541559291,
+      "work_reduction_percent": 96.51474530831099,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 372.0,
+        "wall_seconds": 0.005398100009188056,
+        "runtime": 0.005398400011472404,
+        "work": 11190,
+        "iterations": 373,
+        "variables": 30,
+        "constraints": 1,
+        "nonzeros": 30,
+        "method": "scan_all_threshold_candidates",
+        "residual": 30.799999999999955
+      },
+      "technique": {
+        "objective": 372.0,
+        "wall_seconds": 0.00017610006034374237,
+        "runtime": 0.00017639994621276855,
+        "work": 390,
+        "iterations": 13,
+        "variables": 30,
+        "constraints": 1,
+        "nonzeros": 30,
+        "method": "log_guided_binary_threshold",
+        "residual": 30.799999999999955
+      },
+      "reference_objective": 372.0,
+      "runtime_speedup_percent": 96.73236614852748,
+      "work_reduction_percent": 96.51474530831099,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 95.79557541559291,
+  "minimum_work_reduction_percent": 96.51474530831099,
+  "pass": true
+}

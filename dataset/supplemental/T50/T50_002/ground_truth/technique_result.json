@@ -1,0 +1,15 @@
+{
+  "problem_id": "T50_002",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 109.93564432940738,
+  "solver_runtime_seconds": 8.500000000022379e-06,
+  "code_run_time_seconds": 8.500000000022379e-06,
+  "work_units": 258,
+  "num_variables": 258,
+  "num_constraints": 258,
+  "num_nonzeros": 258,
+  "iterations": 1,
+  "method": "separable_additive_low_rank_tensor_projection",
+  "validation_source": "validation.json"
+}

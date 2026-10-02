@@ -1,0 +1,15 @@
+{
+  "problem_id": "T45_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 33649.44567474037,
+  "solver_runtime_seconds": 0.23535720799999998,
+  "code_run_time_seconds": 0.23535720799999998,
+  "work_units": 1504800,
+  "num_variables": 8800,
+  "num_constraints": 8800,
+  "num_nonzeros": 8800,
+  "iterations": 1,
+  "method": "generic_kkt_search_despite_failed_cq",
+  "validation_source": "validation.json"
+}

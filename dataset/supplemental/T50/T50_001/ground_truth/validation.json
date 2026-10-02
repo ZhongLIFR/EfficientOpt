@@ -1,0 +1,93 @@
+{
+  "problem_id": "T50_001",
+  "target_technique": "T50",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 274803.0245079036,
+        "solution_norm_sq": 1048066.4550263631,
+        "solution_checksum": 67.07411593624578,
+        "wall_seconds": 1.00452875,
+        "runtime": 1.00452875,
+        "work": 5616000,
+        "iterations": 1,
+        "variables": 1404000,
+        "constraints": 0,
+        "nonzeros": 1404000,
+        "method": "dense_full_tensor_cp_shrinkage",
+        "materialized_customer_slices": 130
+      },
+      "technique": {
+        "objective": 274803.0245079076,
+        "solution_norm_sq": 1048066.455026345,
+        "solution_checksum": 0.7464860790785933,
+        "wall_seconds": 0.00040070799999991635,
+        "runtime": 0.00040070799999991635,
+        "work": 5456,
+        "iterations": 1,
+        "variables": 1360,
+        "constraints": 0,
+        "nonzeros": 1360,
+        "method": "cp_factor_gram_shrinkage",
+        "structure_preserved": "rank-R CP tensor represented by three factor matrices"
+      },
+      "reference_objective": 274803.0245079076,
+      "runtime_speedup_percent": 99.96010985250548,
+      "work_reduction_percent": 99.90284900284901,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 274803.0245079036,
+        "solution_norm_sq": 1048066.4550263631,
+        "solution_checksum": 67.07411593624578,
+        "wall_seconds": 0.9640811249999999,
+        "runtime": 0.9640811249999999,
+        "work": 5616000,
+        "iterations": 1,
+        "variables": 1404000,
+        "constraints": 0,
+        "nonzeros": 1404000,
+        "method": "dense_full_tensor_cp_shrinkage",
+        "materialized_customer_slices": 130
+      },
+      "technique": {
+        "objective": 274803.0245079076,
+        "solution_norm_sq": 1048066.455026345,
+        "solution_checksum": 0.7464860790785933,
+        "wall_seconds": 0.0004078750000000575,
+        "runtime": 0.0004078750000000575,
+        "work": 5456,
+        "iterations": 1,
+        "variables": 1360,
+        "constraints": 0,
+        "nonzeros": 1360,
+        "method": "cp_factor_gram_shrinkage",
+        "structure_preserved": "rank-R CP tensor represented by three factor matrices"
+      },
+      "reference_objective": 274803.0245079076,
+      "runtime_speedup_percent": 99.9576928756903,
+      "work_reduction_percent": 99.90284900284901,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.9576928756903,
+  "minimum_work_reduction_percent": 99.90284900284901,
+  "pass": true
+}

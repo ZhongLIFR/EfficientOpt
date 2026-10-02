@@ -1,0 +1,81 @@
+{
+  "problem_id": "T31_001",
+  "target_technique": "T31",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 147.0,
+        "wall_seconds": 0.0013571999734267592,
+        "runtime": 0.0013578999787569046,
+        "work": 4380,
+        "iterations": 119,
+        "variables": 120,
+        "constraints": 120,
+        "nonzeros": 2190,
+        "method": "repeated_generic_relaxation"
+      },
+      "technique": {
+        "objective": 147.0,
+        "wall_seconds": 0.0016222000122070312,
+        "runtime": 0.001622700016014278,
+        "work": 2190,
+        "iterations": 120,
+        "variables": 120,
+        "constraints": 120,
+        "nonzeros": 2190,
+        "method": "topological_dag_shortest_path"
+      },
+      "reference_objective": 147.0,
+      "runtime_speedup_percent": -19.500702658511393,
+      "work_reduction_percent": 50.0,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 147.0,
+        "wall_seconds": 0.000902600004337728,
+        "runtime": 0.000902900006622076,
+        "work": 4380,
+        "iterations": 119,
+        "variables": 120,
+        "constraints": 120,
+        "nonzeros": 2190,
+        "method": "repeated_generic_relaxation"
+      },
+      "technique": {
+        "objective": 147.0,
+        "wall_seconds": 0.001183799933642149,
+        "runtime": 0.0011841999366879463,
+        "work": 2190,
+        "iterations": 120,
+        "variables": 120,
+        "constraints": 120,
+        "nonzeros": 2190,
+        "method": "topological_dag_shortest_path"
+      },
+      "reference_objective": 147.0,
+      "runtime_speedup_percent": -31.155158711125484,
+      "work_reduction_percent": 50.0,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": -31.155158711125484,
+  "minimum_work_reduction_percent": 50.0,
+  "pass": true
+}

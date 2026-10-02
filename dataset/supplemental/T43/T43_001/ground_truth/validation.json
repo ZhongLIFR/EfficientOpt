@@ -1,0 +1,81 @@
+{
+  "problem_id": "T43_001",
+  "target_technique": "T43",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 4.0,
+        "wall_seconds": 2.7521620999323204,
+        "runtime": 2.752162499935366,
+        "work": 12146179,
+        "iterations": 12146179,
+        "variables": 100,
+        "constraints": 100,
+        "nonzeros": 300,
+        "method": "recursive_alignment_path_enumeration"
+      },
+      "technique": {
+        "objective": 4.0,
+        "wall_seconds": 5.1600043661892414e-05,
+        "runtime": 5.1900045946240425e-05,
+        "work": 100,
+        "iterations": 100,
+        "variables": 100,
+        "constraints": 100,
+        "nonzeros": 300,
+        "method": "sequence_alignment_dynamic_programming"
+      },
+      "reference_objective": 4.0,
+      "runtime_speedup_percent": 99.99811420851975,
+      "work_reduction_percent": 99.99917669581521,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 4.0,
+        "wall_seconds": 2.917678099940531,
+        "runtime": 2.9176783999428153,
+        "work": 12146179,
+        "iterations": 12146179,
+        "variables": 100,
+        "constraints": 100,
+        "nonzeros": 300,
+        "method": "recursive_alignment_path_enumeration"
+      },
+      "technique": {
+        "objective": 4.0,
+        "wall_seconds": 6.120000034570694e-05,
+        "runtime": 6.140000186860561e-05,
+        "work": 100,
+        "iterations": 100,
+        "variables": 100,
+        "constraints": 100,
+        "nonzeros": 300,
+        "method": "sequence_alignment_dynamic_programming"
+      },
+      "reference_objective": 4.0,
+      "runtime_speedup_percent": 99.99789558705751,
+      "work_reduction_percent": 99.99917669581521,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99789558705751,
+  "minimum_work_reduction_percent": 99.99917669581521,
+  "pass": true
+}

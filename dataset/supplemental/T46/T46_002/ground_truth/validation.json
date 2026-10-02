@@ -1,0 +1,89 @@
+{
+  "problem_id": "T46_002",
+  "target_technique": "T46",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1929.81119277108,
+        "total_allocation": 1052.8649999999989,
+        "wall_seconds": 0.251540875,
+        "runtime": 0.251540875,
+        "work": 1458160526,
+        "iterations": 4,
+        "variables": 901,
+        "constraints": 901,
+        "nonzeros": 2700,
+        "method": "dense_active_set_kkt"
+      },
+      "technique": {
+        "objective": 1929.8111927710786,
+        "total_allocation": 1052.865000000001,
+        "wall_seconds": 0.007696209000000009,
+        "runtime": 0.007696209000000009,
+        "work": 81000,
+        "iterations": 90,
+        "variables": 900,
+        "constraints": 1,
+        "nonzeros": 900,
+        "method": "diagonal_cone_dual_search",
+        "structure_preserved": "diagonal Hessian, single equality, nonnegative cone"
+      },
+      "reference_objective": 1929.8111927710786,
+      "runtime_speedup_percent": 96.94037440237099,
+      "work_reduction_percent": 99.99444505604454,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_budget_feasible": true,
+        "technique_budget_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1929.81119277108,
+        "total_allocation": 1052.8649999999989,
+        "wall_seconds": 0.20666450000000003,
+        "runtime": 0.20666450000000003,
+        "work": 1458160526,
+        "iterations": 4,
+        "variables": 901,
+        "constraints": 901,
+        "nonzeros": 2700,
+        "method": "dense_active_set_kkt"
+      },
+      "technique": {
+        "objective": 1929.8111927710786,
+        "total_allocation": 1052.865000000001,
+        "wall_seconds": 0.007625083999999949,
+        "runtime": 0.007625083999999949,
+        "work": 81000,
+        "iterations": 90,
+        "variables": 900,
+        "constraints": 1,
+        "nonzeros": 900,
+        "method": "diagonal_cone_dual_search",
+        "structure_preserved": "diagonal Hessian, single equality, nonnegative cone"
+      },
+      "reference_objective": 1929.8111927710786,
+      "runtime_speedup_percent": 96.3104045445638,
+      "work_reduction_percent": 99.99444505604454,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_budget_feasible": true,
+        "technique_budget_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 96.3104045445638,
+  "minimum_work_reduction_percent": 99.99444505604454,
+  "pass": true
+}

@@ -1,0 +1,101 @@
+{
+  "problem_id": "T28_001",
+  "target_technique": "T28",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 199222125.0,
+        "total_shortage": 2097075,
+        "violated_rows": 2880,
+        "max_shortage": 1192,
+        "wall_seconds": 0.193189167,
+        "runtime": 0.193189167,
+        "work": 2097075,
+        "iterations": 2097075,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "unit_budget_feasibility_search"
+      },
+      "technique": {
+        "objective": 199222125.0,
+        "total_shortage": 2097075,
+        "violated_rows": 2880,
+        "max_shortage": 1192,
+        "wall_seconds": 0.0010331249999999959,
+        "runtime": 0.0010331249999999959,
+        "work": 2880,
+        "iterations": 1,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "explicit_shortage_slack_penalty",
+        "slack_count": 2880,
+        "penalty_per_unit": 95.0
+      },
+      "reference_objective": 199222125.0,
+      "reference_total_shortage": 2097075,
+      "runtime_speedup_percent": 99.46522622565064,
+      "work_reduction_percent": 99.86266585601373,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_total_shortage": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "slack_is_reported": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 199222125.0,
+        "total_shortage": 2097075,
+        "violated_rows": 2880,
+        "max_shortage": 1192,
+        "wall_seconds": 0.17280091599999997,
+        "runtime": 0.17280091599999997,
+        "work": 2097075,
+        "iterations": 2097075,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "unit_budget_feasibility_search"
+      },
+      "technique": {
+        "objective": 199222125.0,
+        "total_shortage": 2097075,
+        "violated_rows": 2880,
+        "max_shortage": 1192,
+        "wall_seconds": 0.00032845900000000317,
+        "runtime": 0.00032845900000000317,
+        "work": 2880,
+        "iterations": 1,
+        "variables": 2880,
+        "constraints": 2880,
+        "nonzeros": 2880,
+        "method": "explicit_shortage_slack_penalty",
+        "slack_count": 2880,
+        "penalty_per_unit": 95.0
+      },
+      "reference_objective": 199222125.0,
+      "reference_total_shortage": 2097075,
+      "runtime_speedup_percent": 99.80992056778217,
+      "work_reduction_percent": 99.86266585601373,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_total_shortage": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "slack_is_reported": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.46522622565064,
+  "minimum_work_reduction_percent": 99.86266585601373,
+  "pass": true
+}

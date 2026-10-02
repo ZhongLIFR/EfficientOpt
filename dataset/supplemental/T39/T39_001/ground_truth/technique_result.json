@@ -1,0 +1,15 @@
+{
+  "problem_id": "T39_001",
+  "formulation": "technique",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 880068.8000000006,
+  "solver_runtime_seconds": 0.00025620900000000724,
+  "code_run_time_seconds": 0.00025620900000000724,
+  "work_units": 19250,
+  "num_variables": 1,
+  "num_constraints": 0,
+  "num_nonzeros": 1750,
+  "iterations": 1,
+  "method": "subgradient_weighted_median_condition",
+  "validation_source": "validation.json"
+}

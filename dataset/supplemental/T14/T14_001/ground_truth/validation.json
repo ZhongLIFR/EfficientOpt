@@ -1,0 +1,87 @@
+{
+  "problem_id": "T14_001",
+  "target_technique": "T14",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 23247.348424406424,
+        "wall_seconds": 1.553174292,
+        "runtime": 1.553174292,
+        "work": 335940504,
+        "iterations": 24,
+        "variables": 5784,
+        "constraints": 2904,
+        "nonzeros": 11520,
+        "method": "centralized_dense_kkt"
+      },
+      "technique": {
+        "objective": 23247.348424406377,
+        "wall_seconds": 0.02654175000000003,
+        "runtime": 0.02654175000000003,
+        "work": 97920,
+        "iterations": 34,
+        "variables": 2904,
+        "constraints": 2880,
+        "nonzeros": 5760,
+        "method": "consensus_admm_closed_form",
+        "rho": 2.0,
+        "primal_residual": 6.433885005319162e-08,
+        "dual_residual": 1.3761767281295079e-09
+      },
+      "reference_objective": 23247.34842440643,
+      "runtime_speedup_percent": 98.29112868164832,
+      "work_reduction_percent": 99.97085198157588,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "admm_converged": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 23247.348424406424,
+        "wall_seconds": 1.341900375,
+        "runtime": 1.341900375,
+        "work": 335940504,
+        "iterations": 24,
+        "variables": 5784,
+        "constraints": 2904,
+        "nonzeros": 11520,
+        "method": "centralized_dense_kkt"
+      },
+      "technique": {
+        "objective": 23247.348424406377,
+        "wall_seconds": 0.022182541999999916,
+        "runtime": 0.022182541999999916,
+        "work": 97920,
+        "iterations": 34,
+        "variables": 2904,
+        "constraints": 2880,
+        "nonzeros": 5760,
+        "method": "consensus_admm_closed_form",
+        "rho": 2.0,
+        "primal_residual": 6.433885005319162e-08,
+        "dual_residual": 1.3761767281295079e-09
+      },
+      "reference_objective": 23247.34842440643,
+      "runtime_speedup_percent": 98.34693078463444,
+      "work_reduction_percent": 99.97085198157588,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "admm_converged": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 98.29112868164832,
+  "minimum_work_reduction_percent": 99.97085198157588,
+  "pass": true
+}

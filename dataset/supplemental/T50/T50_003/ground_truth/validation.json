@@ -1,0 +1,89 @@
+{
+  "problem_id": "T50_003",
+  "target_technique": "T50",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 1.0002573016770255,
+        "core_checksum": -124.63729484424147,
+        "wall_seconds": 17.845401250000002,
+        "runtime": 17.845401250000002,
+        "work": 380712960,
+        "iterations": 1,
+        "variables": 293796,
+        "constraints": 293760,
+        "nonzeros": 10575360,
+        "method": "dense_tucker_entrywise_design"
+      },
+      "technique": {
+        "objective": 1.0002573016770406,
+        "core_checksum": -124.63729484420135,
+        "wall_seconds": 0.0018583340000013493,
+        "runtime": 0.0018583340000013493,
+        "work": 48932,
+        "iterations": 1,
+        "variables": 36,
+        "constraints": 0,
+        "nonzeros": 1296,
+        "method": "tucker_core_gram_normal_equation",
+        "structure_preserved": "Tucker tensor form with three factor matrices and a small core tensor"
+      },
+      "reference_objective": 1.0002573016770406,
+      "runtime_speedup_percent": 99.98958648239977,
+      "work_reduction_percent": 99.9871472723177,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_core_checksum": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 1.0002573016770255,
+        "core_checksum": -124.63729484424147,
+        "wall_seconds": 17.641975916,
+        "runtime": 17.641975916,
+        "work": 380712960,
+        "iterations": 1,
+        "variables": 293796,
+        "constraints": 293760,
+        "nonzeros": 10575360,
+        "method": "dense_tucker_entrywise_design"
+      },
+      "technique": {
+        "objective": 1.0002573016770406,
+        "core_checksum": -124.63729484420135,
+        "wall_seconds": 0.001884249999996257,
+        "runtime": 0.001884249999996257,
+        "work": 48932,
+        "iterations": 1,
+        "variables": 36,
+        "constraints": 0,
+        "nonzeros": 1296,
+        "method": "tucker_core_gram_normal_equation",
+        "structure_preserved": "Tucker tensor form with three factor matrices and a small core tensor"
+      },
+      "reference_objective": 1.0002573016770406,
+      "runtime_speedup_percent": 99.98931950701572,
+      "work_reduction_percent": 99.9871472723177,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "same_core_checksum": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.98931950701572,
+  "minimum_work_reduction_percent": 99.9871472723177,
+  "pass": true
+}

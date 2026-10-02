@@ -1,0 +1,15 @@
+{
+  "problem_id": "T31_002",
+  "formulation": "ordinary",
+  "solver_status": "VALIDATED_NATIVE_PYTHON",
+  "objective_value": 7.0,
+  "solver_runtime_seconds": 2.0970798999769613,
+  "code_run_time_seconds": 2.0970792000880465,
+  "work_units": 5082624,
+  "num_variables": 20,
+  "num_constraints": 20,
+  "num_nonzeros": 20,
+  "iterations": 1048576,
+  "method": "enumerate_interval_subsets",
+  "validation_source": "validation.json"
+}

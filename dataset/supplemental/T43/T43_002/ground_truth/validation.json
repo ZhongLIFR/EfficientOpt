@@ -1,0 +1,81 @@
+{
+  "problem_id": "T43_002",
+  "target_technique": "T43",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 180.1,
+        "wall_seconds": 4.543578499928117,
+        "runtime": 4.543578899931163,
+        "work": 17399785,
+        "iterations": 1048576,
+        "variables": 10,
+        "constraints": 10,
+        "nonzeros": 40,
+        "method": "enumerate_inventory_plans"
+      },
+      "technique": {
+        "objective": 180.1,
+        "wall_seconds": 7.139996159821749e-05,
+        "runtime": 7.159996312111616e-05,
+        "work": 102,
+        "iterations": 10,
+        "variables": 90,
+        "constraints": 90,
+        "nonzeros": 450,
+        "method": "inventory_state_transition_dynamic_programming"
+      },
+      "reference_objective": 180.1,
+      "runtime_speedup_percent": 99.99842415054964,
+      "work_reduction_percent": 99.99941378586,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 180.1,
+        "wall_seconds": 4.813265500008129,
+        "runtime": 4.8132657000096515,
+        "work": 17399785,
+        "iterations": 1048576,
+        "variables": 10,
+        "constraints": 10,
+        "nonzeros": 40,
+        "method": "enumerate_inventory_plans"
+      },
+      "technique": {
+        "objective": 180.1,
+        "wall_seconds": 6.610003765672445e-05,
+        "runtime": 6.620003841817379e-05,
+        "work": 102,
+        "iterations": 10,
+        "variables": 90,
+        "constraints": 90,
+        "nonzeros": 450,
+        "method": "inventory_state_transition_dynamic_programming"
+      },
+      "reference_objective": 180.1,
+      "runtime_speedup_percent": 99.99862463361585,
+      "work_reduction_percent": 99.99941378586,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "runtime_or_work_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "model_size_comparison_not_required_for_native_algorithms": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99842415054964,
+  "minimum_work_reduction_percent": 99.99941378586,
+  "pass": true
+}

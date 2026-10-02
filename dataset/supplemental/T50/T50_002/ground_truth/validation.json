@@ -1,0 +1,103 @@
+{
+  "problem_id": "T50_002",
+  "target_technique": "T50",
+  "independent_rounds": [
+    {
+      "ordinary": {
+        "objective": 109.9356443294097,
+        "max_region_error": 3.268496584496461e-13,
+        "max_channel_error": 2.8421709430404007e-13,
+        "max_period_error": 5.968558980384842e-13,
+        "solution_checksum": 2.573989318339749,
+        "wall_seconds": 0.27282837499999996,
+        "runtime": 0.27282837499999996,
+        "work": 625152,
+        "iterations": 1,
+        "variables": 625152,
+        "constraints": 258,
+        "nonzeros": 1875456,
+        "method": "dense_flattened_tensor_marginal_projection"
+      },
+      "technique": {
+        "objective": 109.93564432940738,
+        "max_region_error": 0.0,
+        "max_channel_error": 0.0,
+        "max_period_error": 0.0,
+        "solution_checksum": -0.0032290303217268126,
+        "wall_seconds": 8.500000000022379e-06,
+        "runtime": 8.500000000022379e-06,
+        "work": 258,
+        "iterations": 1,
+        "variables": 258,
+        "constraints": 258,
+        "nonzeros": 258,
+        "method": "separable_additive_low_rank_tensor_projection",
+        "structure_preserved": "three-mode marginal tensor represented by additive one-dimensional factors"
+      },
+      "reference_objective": 109.93564432940738,
+      "runtime_speedup_percent": 99.99688448827948,
+      "work_reduction_percent": 99.95873003685503,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_marginal_feasible": true,
+        "technique_marginal_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    },
+    {
+      "ordinary": {
+        "objective": 109.9356443294097,
+        "max_region_error": 3.268496584496461e-13,
+        "max_channel_error": 2.8421709430404007e-13,
+        "max_period_error": 5.968558980384842e-13,
+        "solution_checksum": 2.573989318339749,
+        "wall_seconds": 0.22231687499999997,
+        "runtime": 0.22231687499999997,
+        "work": 625152,
+        "iterations": 1,
+        "variables": 625152,
+        "constraints": 258,
+        "nonzeros": 1875456,
+        "method": "dense_flattened_tensor_marginal_projection"
+      },
+      "technique": {
+        "objective": 109.93564432940738,
+        "max_region_error": 0.0,
+        "max_channel_error": 0.0,
+        "max_period_error": 0.0,
+        "solution_checksum": -0.0032290303217268126,
+        "wall_seconds": 8.791000000063498e-06,
+        "runtime": 8.791000000063498e-06,
+        "work": 258,
+        "iterations": 1,
+        "variables": 258,
+        "constraints": 258,
+        "nonzeros": 258,
+        "method": "separable_additive_low_rank_tensor_projection",
+        "structure_preserved": "three-mode marginal tensor represented by additive one-dimensional factors"
+      },
+      "reference_objective": 109.93564432940738,
+      "runtime_speedup_percent": 99.99604573427003,
+      "work_reduction_percent": 99.95873003685503,
+      "checks": {
+        "objective_match": true,
+        "ordinary_matches_reference": true,
+        "technique_matches_reference": true,
+        "ordinary_marginal_feasible": true,
+        "technique_marginal_feasible": true,
+        "runtime_speedup_at_least_10_percent": true,
+        "deterministic_work_reduced": true,
+        "variable_count_reduced": true
+      },
+      "pass": true
+    }
+  ],
+  "minimum_runtime_speedup_percent": 99.99604573427003,
+  "minimum_work_reduction_percent": 99.95873003685503,
+  "pass": true
+}

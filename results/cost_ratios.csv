@@ -1,0 +1,12 @@
+model,runtime_vs_ordinary,runtime_vs_expert,work_vs_expert,build_opt_vs_expert
+Gemini 3.1 Pro,0.52,1.68,1.98,1.43
+GPT-5.5,0.58,1.79,2.08,1.64
+Claude Opus 4.6,0.46,1.49,1.77,1.42
+DeepSeek-V4 Flash,0.49,1.62,1.78,1.47
+Kimi K2.6,0.55,1.79,2.02,1.59
+Qwen 3.6 27B,0.61,1.94,1.97,1.99
+GLM-5.1,0.50,1.68,1.92,1.44
+Qwen 3.5 122B,0.55,1.82,1.99,1.73
+MiniMax M2.5,0.59,1.80,2.01,1.77
+Qwen 3 32B,0.66,2.03,2.08,1.83
+Qwen 3.6 Plus,0.52,1.83,2.22,1.63
