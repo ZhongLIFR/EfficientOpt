@@ -6,6 +6,7 @@
 [![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23093476.svg)](https://doi.org/10.5281/zenodo.23093476)
 [![OptTips](https://img.shields.io/badge/OptTips-50%20technique%20cards-2E8B57)](assets/OptTips.pdf)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](#quick-start)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=ZhongLIFR.EfficientOpt&left_text=Visitors&right_color=blue)
 
 Zhong Li<sup>*</sup>, Xin Huang<sup>*</sup>, Jinhui Wan, Xiangyi Wang,
 Shenkai Zhang, Ruiqi Chen, Wenyu Liu, Zaiwen Wen<sup>†</sup>, and Ziyan Luo<sup>†</sup>.
